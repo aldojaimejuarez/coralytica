@@ -395,7 +395,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About the Section */}
       <section id="about" className="bg-gray-100 py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
