@@ -115,10 +115,10 @@ function HomePage() {
 
   const socialLinks = [
     { icon: <FaLinkedin size={24} />, url: "https://linkedin.com/company/coralytica", name: "LinkedIn" },
-    { icon: <FaYoutube size={24} />, url: "https://youtube.com/c/coralytica", name: "YouTube" },
-    { icon: <FaFacebook size={24} />, url: "https://facebook.com/coralytica", name: "Facebook" },
-    { icon: <FaInstagram size={24} />, url: "https://instagram.com/coralytica", name: "Instagram" },
-    { icon: <FaTiktok size={24} />, url: "https://tiktok.com/@coralytica", name: "TikTok" }
+    { icon: <FaYoutube size={24} />, url: "https://www.youtube.com/@Coralytica", name: "YouTube" },
+    { icon: <FaFacebook size={24} />, url: "https://www.facebook.com/share/15D56vEjMi/?mibextid=wwXIfr", name: "Facebook" },
+    { icon: <FaInstagram size={24} />, url: "https://www.instagram.com/coralytica/", name: "Instagram" },
+    { icon: <FaTiktok size={24} />, url: "https://www.tiktok.com/@coralytica?_t=ZS-8uVJXYkw7QG&_r=1", name: "TikTok" }
   ];
 
   const coreValues = [
