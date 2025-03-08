@@ -29,6 +29,8 @@ import {
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
 
+console.log("Nuevo cambio")
+
 function App() {
   return (
     <Router>
@@ -395,7 +397,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* About the Section */}
+      {/* About  Section */}
       <section id="about" className="bg-gray-100 py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
