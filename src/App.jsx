@@ -344,7 +344,7 @@ function HomePage() {
               </motion.span>
             </motion.h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Expert data analytics and data engineering consultancy helping businesses harness the power of their data.
+            Coralytica is a data analytics and data engineering consultancy based in NSW, Australia, helping businesses unlock the power of their data. We specialize in cloud and on-premise solutions, BI dashboards, ETL pipelines, and data strategy for small and medium businesses (SMBs). Although headquartered in NSW, we provide remote consulting services to businesses across Australia.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="#contact" className="bg-accent hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
