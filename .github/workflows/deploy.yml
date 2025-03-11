@@ -33,4 +33,4 @@ jobs:
 
       - name: Subir archivos a Hostinger via SFTP
         run: |
-          scp -r -P ${{ secrets.SSH_PORT }} dist/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USERNAME }}/domains/coralytica.com/public_html/
+          scp -r -P ${{ secrets.SSH_PORT }} dist/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USERNAME }}/domains/coralytica.com.au/public_html/
