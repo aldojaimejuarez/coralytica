@@ -566,8 +566,8 @@ function HomePage() {
                   </div>
                   <div className="flex items-center">
                     <FaEnvelope className="mr-4 text-accent" />
-                    <a href="mailto:info@coralytica.com" className="hover:text-accent transition-colors">
-                      info@coralytica.com
+                    <a href="mailto:info@coralytica.com.au" className="hover:text-accent transition-colors">
+                      info@coralytica.com.au
                     </a>
                   </div>
                 </div>
