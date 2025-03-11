@@ -151,7 +151,7 @@ function ServiceDetail() {
                 <FaPhone /> Call Us
               </a>
               <a 
-                href="mailto:info@coralytica.com?subject=Inquiry about Data Services"
+                href="mailto:info@coralytica.com.au?subject=Inquiry about Data Services"
                 className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-3 px-6 rounded-full transition-colors flex items-center justify-center gap-2"
               >
                 <FaEnvelope /> Email Us
