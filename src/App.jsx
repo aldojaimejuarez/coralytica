@@ -30,6 +30,7 @@ import {
 } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
+import AnimatedTextCarousel from './components/AnimatedTextCarousel';
 
 console.log("Nuevo cambio")
 
@@ -239,143 +240,203 @@ function HomePage() {
       </motion.nav>
 
       {/* Hero Section */}
-      <header className="bg-primary text-white relative">
-        <nav className="container mx-auto px-6 py-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <h1 
-                className="text-2xl font-bold cursor-pointer hover:text-accent transition-colors"
-                onClick={scrollToTop}
-              >
-                Coralytica
-              </h1>
-            </div>
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8 justify-end">
-              <a href="#services" className="hover:text-accent transition-colors">Services</a>
-              <a href="#about" className="hover:text-accent transition-colors">About</a>
-              <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
-            </div>
-            {/* Mobile Menu Button */}
-            <div className="md:hidden relative flex justify-end">
-              <button 
-                className="text-white focus:outline-none"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-              </button>
-              
-              {/* Mobile Menu - Positioned to the right */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ 
-                  opacity: isMenuOpen ? 1 : 0,
-                  x: isMenuOpen ? 0 : 20
-                }}
-                transition={{ duration: 0.3 }}
-                className={`absolute top-0 right-10 bg-primary p-4 rounded-lg shadow-lg z-50 ${isMenuOpen ? 'block' : 'hidden'}`}
-                style={{ minWidth: '150px' }}
-              >
-                <div className="space-y-4">
-                  <a 
-                    href="#services" 
-                    className="block hover:text-accent transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Services
-                  </a>
-                  <a 
-                    href="#about" 
-                    className="block hover:text-accent transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    About
-                  </a>
-                  <a 
-                    href="#contact" 
-                    className="block hover:text-accent transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Contact
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </nav>
-        
-        <div className="container mx-auto px-6 py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+      <header className="bg-primary text-white relative overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-20"
+            style={{ filter: 'brightness(0.8)' }}
           >
-            <motion.h1 className="text-5xl font-bold mb-6">
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-block"
-              >
-                Transform
-              </motion.span>{" "}
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="inline-block"
-              >
-                Your
-              </motion.span>{" "}
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="inline-block"
-              >
-                Data
-              </motion.span>{" "}
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="inline-block"
-              >
-                Into
-              </motion.span>
-              <br />
-              <motion.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: 1.0,
-                  type: "spring",
-                  stiffness: 200
-                }}
-                className="gradient-text inline-block"
-              >
-                Business Value
-              </motion.span>
-            </motion.h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Coralytica is a data analytics and data engineering consultancy based in NSW, Australia. We help businesses harness their data through cloud and on-premise solutions, BI dashboards, ETL pipelines, and data strategy for SMBs.
-            </p>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-            We provide on-site consulting in NSW and remote services across Australia, making expert data solutions accessible nationwide.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="#contact" className="bg-accent hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
-                Schedule a Free Consultation
-              </a>
-              <a href="#services" className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-3 px-8 rounded-full transition-colors">
-                Get to Know Our Services
-              </a>
+            <source src="/videos/dashboard_video.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10">
+          <nav className="container mx-auto px-6 py-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <h1 
+                  className="text-2xl font-bold cursor-pointer hover:text-accent transition-colors"
+                  onClick={scrollToTop}
+                >
+                  Coralytica
+                </h1>
+              </div>
+              {/* Desktop Menu */}
+              <div className="hidden md:flex space-x-8 justify-end">
+                <a href="#services" className="hover:text-accent transition-colors">Services</a>
+                <a href="#about" className="hover:text-accent transition-colors">About</a>
+                <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+              </div>
+              {/* Mobile Menu Button */}
+              <div className="md:hidden relative flex justify-end">
+                <button 
+                  className="text-white focus:outline-none"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                  {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                </button>
+                
+                {/* Mobile Menu - Positioned to the right */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ 
+                    opacity: isMenuOpen ? 1 : 0,
+                    x: isMenuOpen ? 0 : 20
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className={`absolute top-0 right-10 bg-primary p-4 rounded-lg shadow-lg z-50 ${isMenuOpen ? 'block' : 'hidden'}`}
+                  style={{ minWidth: '150px' }}
+                >
+                  <div className="space-y-4">
+                    <a 
+                      href="#services" 
+                      className="block hover:text-accent transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Services
+                    </a>
+                    <a 
+                      href="#about" 
+                      className="block hover:text-accent transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      About
+                    </a>
+                    <a 
+                      href="#contact" 
+                      className="block hover:text-accent transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Contact
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </nav>
+          
+          <div className="container mx-auto px-6 py-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <motion.h1 className="text-5xl font-bold mb-6">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="inline-block"
+                >
+                  Transform
+                </motion.span>{" "}
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="inline-block"
+                >
+                  Your
+                </motion.span>{" "}
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="inline-block"
+                >
+                  Data
+                </motion.span>{" "}
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="inline-block"
+                >
+                  Into
+                </motion.span>
+                <br />
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 1.0,
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                  className="gradient-text inline-block"
+                >
+                  Business Value
+                </motion.span>
+              </motion.h1>
+              <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Coralytica is a data analytics and data engineering consultancy based in NSW, Australia. We help businesses harness their data through cloud and on-premise solutions, BI dashboards, ETL pipelines, and data strategy for SMBs.
+              </p>
+              <p className="text-xl mb-8 max-w-2xl mx-auto">
+              We provide on-site consulting in NSW and remote services across Australia, making expert data solutions accessible nationwide.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" className="bg-accent hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                  Schedule a Free Consultation
+                </a>
+                <a href="#services" className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-3 px-8 rounded-full transition-colors">
+                  Get to Know Our Services
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </header>
+
+      {/* Animated Text Carousel Section */}
+      <section className="py-4 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <AnimatedTextCarousel />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Showcase Section */}
+      <section className="py-4 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                style={{ aspectRatio: '16/9' }}
+              >
+                <source src="/videos/dashboard_video.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section id="services" className="py-20">
