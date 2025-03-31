@@ -4,7 +4,9 @@ import {
   FaCubes,
   FaChartBar,
   FaCloud,
-  FaPuzzlePiece
+  FaPuzzlePiece,
+  FaTools,
+  FaGraduationCap
 } from 'react-icons/fa';
 
 export const services = [
@@ -475,6 +477,166 @@ export const services = [
 
       <h3>Why Choose Coralytica?</h3>
       <p>We make cloud migration simple, secure, and cost-effective, helping businesses transition with confidence.</p>
+    `
+  },
+  {
+    id: "data-enablement",
+    icon: <FaTools className="text-4xl text-white" />,
+    title: "Data Enablement and Platform Support",
+    description: "Comprehensive support and enablement services to ensure your data platforms run smoothly and efficiently.",
+    benefit: "Maximize the value of your data investments with expert support, training, and optimization services.",
+    fullDescription: `
+      <h2>Data Enablement and Platform Support</h2>
+      <p>Ensure your data platforms deliver maximum value with our comprehensive support and enablement services.</p>
+
+      <h3>Key Benefit</h3>
+      <p>Maximize the value of your data investments with expert support, training, and optimization services.</p>
+
+      <h3>Why Your Business Needs Data Enablement</h3>
+      <p>Many businesses face challenges with their data platforms:</p>
+
+      <ul>
+        <li>Underutilized platforms – Not fully leveraging the capabilities of your data tools.</li>
+        <li>Technical bottlenecks – Delays in getting support when issues arise.</li>
+        <li>Knowledge gaps – Teams not fully trained on available features.</li>
+        <li>Performance issues – Systems not optimized for efficiency.</li>
+      </ul>
+
+      <p>With our enablement services, your business can:</p>
+
+      <ul>
+        <li>Optimize platform usage – Get the most out of your data investments.</li>
+        <li>Reduce downtime – Quick resolution of technical issues.</li>
+        <li>Empower teams – Build internal expertise through training.</li>
+        <li>Improve efficiency – Optimize system performance and workflows.</li>
+        <li>Stay current – Regular updates on new features and best practices.</li>
+      </ul>
+
+      <h3>Our Support Services</h3>
+      <p>We provide comprehensive support across your data ecosystem:</p>
+
+      <ul>
+        <li>Technical Support – Expert assistance for platform issues and optimization.</li>
+        <li>User Training – Hands-on sessions to build team capabilities.</li>
+        <li>Performance Monitoring – Regular checks to ensure optimal operation.</li>
+        <li>Best Practices – Guidance on platform usage and data management.</li>
+        <li>Upgrade Planning – Strategic advice on platform evolution.</li>
+      </ul>
+
+      <h3>Platforms We Support</h3>
+      <ul>
+        <li>Business Intelligence Tools – Power BI, Tableau, Looker.</li>
+        <li>Data Warehouses – Snowflake, BigQuery, Redshift, Azure Synapse.</li>
+        <li>ETL Platforms – Informatica, Talend, Apache NiFi.</li>
+        <li>Cloud Platforms – AWS, Azure, Google Cloud.</li>
+        <li>Database Systems – SQL Server, PostgreSQL, MongoDB.</li>
+      </ul>
+
+      <h3>Business Outcomes You Can Expect</h3>
+      <ul>
+        <li>Improved Efficiency – Faster resolution of technical issues.</li>
+        <li>Better ROI – Maximized value from your data platforms.</li>
+        <li>Enhanced Productivity – Teams working more effectively with data tools.</li>
+        <li>Reduced Risk – Proactive monitoring and issue prevention.</li>
+        <li>Future-Ready – Regular updates on new features and capabilities.</li>
+      </ul>
+
+      <h3>Our Support Process</h3>
+      <ol>
+        <li>Initial Assessment – Understand your current platform usage and needs.</li>
+        <li>Support Plan Development – Create a customized support strategy.</li>
+        <li>Implementation – Set up monitoring, training, and support processes.</li>
+        <li>Ongoing Optimization – Regular reviews and improvements.</li>
+        <li>Continuous Learning – Keep teams updated with new features and best practices.</li>
+      </ol>
+
+      <h3>Why Choose Coralytica?</h3>
+      <p>We provide comprehensive support that ensures your data platforms deliver maximum value to your business.</p>
+    `
+  },
+  {
+    id: "data-training",
+    icon: <FaGraduationCap className="text-4xl text-white" />,
+    title: "Training and Capacitation in Data Analysis and Engineering",
+    description: "Empower your team with practical knowledge and skills in data analysis and engineering through customized training programs.",
+    benefit: "Build internal expertise and data-driven culture while reducing dependency on external consultants.",
+    fullDescription: `
+      <h2>Training and Capacitation in Data Analysis and Engineering</h2>
+      <p>Empower your team with the knowledge and skills needed to leverage data effectively in your business operations.</p>
+
+      <h3>Key Benefit</h3>
+      <p>Build internal expertise and data-driven culture while reducing dependency on external consultants.</p>
+
+      <h3>Why Invest in Data Training?</h3>
+      <p>Many businesses face challenges with data literacy and technical expertise:</p>
+
+      <ul>
+        <li>Limited data literacy – Teams struggle to understand and use data effectively.</li>
+        <li>High dependency on external consultants – Costly and time-consuming.</li>
+        <li>Missed opportunities – Not fully leveraging available data tools and platforms.</li>
+        <li>Slow adoption of new technologies – Resistance to change and lack of understanding.</li>
+      </ul>
+
+      <p>With our training programs, your business can:</p>
+
+      <ul>
+        <li>Build internal expertise – Develop a skilled team of data professionals.</li>
+        <li>Reduce costs – Minimize dependency on external consultants.</li>
+        <li>Improve efficiency – Faster adoption of data tools and processes.</li>
+        <li>Foster innovation – Encourage data-driven decision making.</li>
+        <li>Stay competitive – Keep up with latest data technologies and practices.</li>
+      </ul>
+
+      <h3>Our Training Programs</h3>
+      <p>We offer comprehensive training programs tailored to your needs:</p>
+
+      <ul>
+        <li>Data Analysis Fundamentals – Basic concepts and tools for data analysis.</li>
+        <li>Data Engineering – ETL processes, data pipelines, and automation.</li>
+        <li>Business Intelligence – Dashboard creation and data visualization.</li>
+        <li>Data Governance – Best practices for data management and security.</li>
+      </ul>
+
+      <h3>Training Formats</h3>
+      <p>We provide flexible training options to suit your team's needs:</p>
+
+      <ul>
+        <li>On-site Workshops – Hands-on training at your location.</li>
+        <li>Virtual Sessions – Remote training with interactive components.</li>
+        <li>Custom Programs – Tailored to your specific tools and processes.</li>
+        <li>Certification Paths – Industry-recognized certifications.</li>
+        <li>Mentoring Programs – One-on-one guidance for key team members.</li>
+      </ul>
+
+      <h3>Topics We Cover</h3>
+      <ul>
+        <li>Data Analysis Tools – Excel, SQL, Python, R.</li>
+        <li>Visualization Platforms – Power BI, Tableau, Looker.</li>
+        <li>ETL & Automation – SSIS, Apache Airflow, dbt.</li>
+        <li>Data Warehousing – Data Modelling, Architecture, On-premise and Cloud</li>
+        <li>Best Practices – Data modeling, governance, security.</li>
+      </ul>
+
+      <h3>Business Outcomes You Can Expect</h3>
+      <ul>
+        <li>Improved Data Literacy – Better understanding and use of data across teams.</li>
+        <li>Increased Efficiency – Faster adoption of data tools and processes.</li>
+        <li>Cost Reduction – Less dependency on external consultants.</li>
+        <li>Better Decision Making – More data-driven business decisions.</li>
+        <li>Enhanced Innovation – New ideas and approaches to data challenges.</li>
+      </ul>
+
+      <h3>Our Training Approach</h3>
+      <ol>
+        <li>Assessment – Evaluate current skill levels and identify gaps.</li>
+        <li>Customization – Design training programs for your specific needs.</li>
+        <li>Implementation – Deliver training through chosen format.</li>
+        <li>Evaluation – Measure progress and adjust as needed.</li>
+        <li>Support – Ongoing guidance and resources.</li>
+      </ol>
+
+      <h3>Why Choose Coralytica?</h3>
+      <p>We combine technical expertise with practical business experience to deliver training that makes a real difference to your organization.</p>
     `
   }
 ];

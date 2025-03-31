@@ -24,7 +24,9 @@ import {
   FaRocket,
   FaHandshake,
   FaUsers,
-  FaLightbulb as FaLightbulbOn
+  FaLightbulb as FaLightbulbOn,
+  FaTools,
+  FaGraduationCap
 } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
@@ -112,6 +114,20 @@ function HomePage() {
       title: "Data Migration from On-Premise to the Cloud",
       description: "Seamlessly migrate your on-premise data and applications to the cloud with minimal disruption and maximum security.",
       benefit: "Reduce infrastructure costs, improve scalability, and enhance data accessibility while ensuring business continuity during migration."
+    },
+    {
+      id: "data-enablement",
+      icon: <FaTools className="text-4xl mb-4 text-accent" />,
+      title: "Data Enablement and Platform Support",
+      description: "Comprehensive support and enablement services to ensure your data platforms run smoothly and efficiently.",
+      benefit: "Maximize the value of your data investments with expert support, training, and optimization services."
+    },
+    {
+      id: "data-training",
+      icon: <FaGraduationCap className="text-4xl mb-4 text-accent" />,
+      title: "Training and Capacitation in Data Analysis and Engineering",
+      description: "Empower your team with practical knowledge and skills in data analysis and engineering through customized training programs.",
+      benefit: "Build internal expertise and data-driven culture while reducing dependency on external consultants."
     }
   ];
 
