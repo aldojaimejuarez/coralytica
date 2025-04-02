@@ -434,6 +434,14 @@ function HomePage() {
                 Tu navegador no soporta el elemento de video.
               </video>
             </motion.div>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-sm text-gray-600 text-center mt-4 italic"
+            >
+              Demo created using Microsoft's Contoso sample dataset for educational and demonstration purposes only. Data is fictional.
+            </motion.p>
           </div>
         </div>
       </section>
