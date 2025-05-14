@@ -595,7 +595,7 @@ function HomePage() {
                     <h3 className="text-2xl font-bold">Leonardo Velázquez – Data Engineer (Cloud & Big Data Specialist)</h3>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Leonardo is a bilingual data engineer with strong hands-on experience across both cloud and on-premise environments. With a background in physics and a master's degree in computer engineering, he has contributed to data-driven projects in banking, retail, and enterprise platforms, implementing scalable ETL pipelines and orchestrating complex data workflows. His expertise includes:
+                    Leonardo is a experienced data engineer with strong hands-on experience across both cloud and on-premise environments. With a background in physics and a master's degree in computer engineering, he has contributed to data-driven projects in banking, retail, and enterprise platforms, implementing scalable ETL pipelines and orchestrating complex data workflows. His expertise includes:
                   </p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                     <li><span className="font-semibold">Cloud Data Engineering</span> – Development of ingestion and transformation pipelines using Google Cloud (Cloud Functions, Composer/Airflow, Dataform) and AWS (EMR, S3, Glue, Lambda, Athena)</li>
@@ -638,7 +638,7 @@ function HomePage() {
                     </a>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Jiamin is a senior data analyst and certified SAS Advanced Programmer with over 7 years of experience across finance, retail, FMCG, real estate, and automotive sectors. Holding a B.S. in Mathematics and currently pursuing a Master's in Computer Science (Machine Learning and Big Data) at the University of Wollongong, she blends analytical depth with practical experience in predictive modeling, business intelligence, and data-driven strategy. Her expertise includes:
+                    Jiamin is a senior data analyst and certified SAS Advanced Programmer with over 7 years of experience across finance, retail, FMCG, real estate, and automotive sectors. Holding a B.S. in Mathematics and currently pursuing a Master's in Computer Science (Machine Learning and Big Data) at the University of Wollongong, he blends analytical depth with practical experience in predictive modeling, business intelligence, and data-driven strategy. Her expertise includes:
                   </p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                     <li><span className="font-semibold">Machine Learning & Predictive Analytics</span> – Development and deployment of classification, regression, and clustering models for churn prediction, customer scoring, and recommendation systems</li>
