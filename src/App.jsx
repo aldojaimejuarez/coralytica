@@ -592,7 +592,7 @@ function HomePage() {
                 {/* Founder Info */}
                 <div className="md:w-2/3">
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                    <h3 className="text-2xl font-bold">Leonardo Velázquez – Data Engineer (Cloud & Big Data Specialist)</h3>
+                    <h3 className="text-2xl font-bold">Leonardo Velázquez – Senior Data Engineer (Cloud & Big Data Specialist)</h3>
                   </div>
                   <p className="text-gray-700 mb-4">
                     Leonardo is a experienced data engineer with strong hands-on experience across both cloud and on-premise environments. With a background in physics and a master's degree in computer engineering, he has contributed to data-driven projects in banking, retail, and enterprise platforms, implementing scalable ETL pipelines and orchestrating complex data workflows. His expertise includes:
