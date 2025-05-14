@@ -489,7 +489,7 @@ function HomePage() {
       <section id="about" className="bg-gray-100 py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">Meet the Founders</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center">Meet the Team</h2>
             
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <div className="flex flex-col md:flex-row gap-8">
@@ -540,9 +540,9 @@ function HomePage() {
                 <div className="md:w-1/3 flex justify-center">
                   <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-accent shadow-lg">
                     <img 
-                      src="/images/ana-luisa-zepeda.jpg" 
-                      alt="Ana Luisa Zepeda de Alba - Data Analyst & Co-Founder" 
-                      className="w-full h-full object-cover"
+                      src="/images/Eduardo Maya.jpg" 
+                      alt="Eduardo Maya - Senior Data Visualization Specialist" 
+                      className="w-full h-full object-cover scale-110"
                     />
                   </div>
                 </div>
@@ -550,28 +550,191 @@ function HomePage() {
                 {/* Founder Info */}
                 <div className="md:w-2/3">
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                    <h3 className="text-2xl font-bold">Ana Luisa Zepeda de Alba – Data Analyst & Co-Founder</h3>
+                    <h3 className="text-2xl font-bold">Eduardo Maya – Senior Data Visualization Specialist</h3>
                     <a 
-                      href="https://www.linkedin.com/in/ana-luisa-zepeda-de-alba-42a93026b/" 
+                      href="https://www.linkedin.com/in/eduardo-maya-pbi/" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-[#0077B5] hover:text-[#005885] transition-colors"
-                      aria-label="Connect with Ana on LinkedIn"
+                      aria-label="Connect with Eduardo on LinkedIn"
                     >
                       <FaLinkedin size={28} />
                     </a>
                   </div>
                   <p className="text-gray-700 mb-4">
-                    Ana is a data analyst with expertise in data pipeline development, ETL automation, and business intelligence. With experience at Nielsen, Notaria 16, and Cyclopata, she has built and optimized data architectures across industries. Her core skills include:
+                    Eduardo is a senior data visualization specialist with extensive experience designing and delivering automated, insightful, and business-aligned dashboards. With a background in economics and over 5 years of experience in business intelligence, he has supported companies such as Danone, Accenture, StoreCheck, and EZCorp in transforming raw data into meaningful visual narratives that support strategic decision-making. His expertise includes:
                   </p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-                    <li><span className="font-semibold">ETL & Data Pipelines</span> – Designing batch data pipelines with Azure Data Factory, SQL Server, and Databricks (Apache Spark)</li>
-                    <li><span className="font-semibold">Cloud & Data Storage</span> – Experienced in GCP and Azure, including Azure Data Lake & Blob Storage for scalable data management</li>
-                    <li><span className="font-semibold">Data Analysis & Visualization</span> – Creating interactive dashboards with Power BI & Tableau to translate data into clear business insights</li>
-                    <li><span className="font-semibold">Automation & CI/CD</span> – Implementing Power Automate and GitHub Actions to streamline data processes</li>
+                    <li><span className="font-semibold">Power BI Development & Automation</span> – Advanced DAX, Power Query, Direct Query, Import and Dual models, row-level security, paginated reports, and scheduled refreshes</li>
+                    <li><span className="font-semibold">SQL & Data Modeling</span> – Design of semantic models, data cubes, and star/snowflake schemas for scalable and high-performance reporting</li>
+                    <li><span className="font-semibold">Business Insight Delivery</span> – Creation of scorecards, intranet-ready menus, usage monitoring dashboards, and performance reports tailored for finance, retail, and logistics</li>
+                    <li><span className="font-semibold">Datamarts & Integration</span> – Development and management of data marts and ODC connectors for Excel and enterprise reporting tools</li>
                   </ul>
                   <p className="text-gray-700">
-                    With a strong analytical mindset, Ana specializes in making complex data accessible, ensuring that businesses not only collect data but leverage it to drive better decision-making.
+                    Eduardo combines analytical rigor with design intuition to deliver intuitive, interactive dashboards that empower teams and drive data-informed decisions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Founder Image */}
+                <div className="md:w-1/3 flex justify-center">
+                  <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                    <img 
+                      src="/images/Leonardo Velazquez.jpg" 
+                      alt="Leonardo Velázquez - Data Engineer (Cloud & Big Data Specialist)" 
+                      className="w-full h-full object-cover scale-150 object-top transform -translate-y-8"
+                    />
+                  </div>
+                </div>
+                {/* Founder Info */}
+                <div className="md:w-2/3">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <h3 className="text-2xl font-bold">Leonardo Velázquez – Data Engineer (Cloud & Big Data Specialist)</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    Leonardo is a bilingual data engineer with strong hands-on experience across both cloud and on-premise environments. With a background in physics and a master's degree in computer engineering, he has contributed to data-driven projects in banking, retail, and enterprise platforms, implementing scalable ETL pipelines and orchestrating complex data workflows. His expertise includes:
+                  </p>
+                  <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                    <li><span className="font-semibold">Cloud Data Engineering</span> – Development of ingestion and transformation pipelines using Google Cloud (Cloud Functions, Composer/Airflow, Dataform) and AWS (EMR, S3, Glue, Lambda, Athena)</li>
+                    <li><span className="font-semibold">Big Data & Processing</span> – PySpark pipelines, HDFS, Hive, and Dockerized data services for batch and streaming workloads</li>
+                    <li><span className="font-semibold">ETL & Orchestration</span> – Creation of bronze, silver, and gold data layers, business logic scripting, and automation of data ingestion from sources such as AS400, Salesforce, Excel, and external servers</li>
+                    <li><span className="font-semibold">Data Modeling & Integration</span> – Design and implementation of semantic layers for analytics and AI use cases using PostgreSQL, OracleDB, and MongoDB</li>
+                    <li><span className="font-semibold">Machine Learning R&D</span> – Experience applying deep learning, NLP, and attention mechanisms in molecular data environments using PyTorch and TensorFlow</li>
+                  </ul>
+                  <p className="text-gray-700">
+                    Leonardo brings a blend of academic rigor and real-world experience, helping Coralytica design reliable, cloud-native data infrastructures that support advanced analytics and business growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Founder Image */}
+                <div className="md:w-1/3 flex justify-center">
+                  <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                    <img 
+                      src="/images/jiamin.jpeg" 
+                      alt="Jiamin Sui - Senior Data Analyst & Machine Learning Specialist" 
+                      className="w-full h-full object-contain object-center"
+                    />
+                  </div>
+                </div>
+                {/* Founder Info */}
+                <div className="md:w-2/3">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <h3 className="text-2xl font-bold">Jiamin Sui – Senior Data Analyst & Machine Learning Specialist</h3>
+                    <a 
+                      href="https://www.linkedin.com/in/jiaminsui/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#0077B5] hover:text-[#005885] transition-colors"
+                      aria-label="Connect with Jiamin on LinkedIn"
+                    >
+                      <FaLinkedin size={28} />
+                    </a>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    Jiamin is a senior data analyst and certified SAS Advanced Programmer with over 7 years of experience across finance, retail, FMCG, real estate, and automotive sectors. Holding a B.S. in Mathematics and currently pursuing a Master's in Computer Science (Machine Learning and Big Data) at the University of Wollongong, she blends analytical depth with practical experience in predictive modeling, business intelligence, and data-driven strategy. Her expertise includes:
+                  </p>
+                  <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                    <li><span className="font-semibold">Machine Learning & Predictive Analytics</span> – Development and deployment of classification, regression, and clustering models for churn prediction, customer scoring, and recommendation systems</li>
+                    <li><span className="font-semibold">Data Modeling & Feature Engineering</span> – End-to-end model lifecycle management with RFM analysis, A/B testing, feature selection, and data leakage control</li>
+                    <li><span className="font-semibold">Big Data & Programming</span> – Skilled in Python, Spark, Hadoop, and SQL for large-scale data processing and automation</li>
+                    <li><span className="font-semibold">Business Intelligence & KPI Reporting</span> – Creation of actionable dashboards and performance reports for top-tier clients including McDonald's, General Motors, Dyson, and L'Oréal</li>
+                    <li><span className="font-semibold">CRM & Customer Insights</span> – Advanced segmentation, behavioral analysis, and loyalty program optimization using tools like Power BI and PostgreSQL</li>
+                  </ul>
+                  <p className="text-gray-700">
+                    Jiamin's strength lies in translating complex data into strategic business solutions, helping organizations unlock value through data science and insightful reporting.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Founder Image */}
+                <div className="md:w-1/3 flex justify-center">
+                  <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                    <img 
+                      src="/images/Adrian Nhu.jpg" 
+                      alt="Adrian Nhu - Software Developer (Backend & AI Applications)" 
+                      className="w-full h-full object-cover object-center scale-100"
+                    />
+                  </div>
+                </div>
+                {/* Founder Info */}
+                <div className="md:w-2/3">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <h3 className="text-2xl font-bold">Adrian Nhu – Software Developer (Backend & AI Applications)</h3>
+                    <a 
+                      href="https://www.linkedin.com/in/gia-bach-nhu-37a79b24b/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#0077B5] hover:text-[#005885] transition-colors"
+                      aria-label="Connect with Adrian on LinkedIn"
+                    >
+                      <FaLinkedin size={28} />
+                    </a>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    Adrian is a software developer with a strong background in backend systems, cloud integration, and AI-powered applications. With a Bachelor of Computer Science (Software Engineering, AI & Big Data) from the University of Wollongong and hands-on experience building full-stack and AI-driven platforms, Adrian brings a deep understanding of modern software development and scalable infrastructure. His expertise includes:
+                  </p>
+                  <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                    <li><span className="font-semibold">Backend & API Development</span> – Java Spring Boot, Node.js/Express.js, RESTful APIs, GraphQL, and optimized database interactions (PostgreSQL, Firebase, MySQL)</li>
+                    <li><span className="font-semibold">Frontend Technologies</span> – React.js, Next.js, TypeScript, and Tailwind CSS for responsive and interactive user experiences</li>
+                    <li><span className="font-semibold">AI & Machine Learning</span> – Applied solutions using OpenCV, TensorFlow, PyTorch, and Hugging Face, including facial recognition and GenAI-based projects</li>
+                    <li><span className="font-semibold">Cloud & DevOps</span> – Deployment pipelines using CI/CD, Docker, and AWS (EC2, S3, RDS), with real-world experience in Agile and Scrum environments</li>
+                    <li><span className="font-semibold">Project Highlights</span> – Facial recognition-based attendance tracking (Lectoro) and quiz delivery platforms with real-time user interaction and privacy compliance</li>
+                  </ul>
+                  <p className="text-gray-700">
+                    Adrian combines technical excellence with innovation, supporting Coralytica's mission to deliver intelligent, scalable solutions that bridge data engineering with practical AI applications.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Founder Image */}
+                <div className="md:w-1/3 flex justify-center">
+                  <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                    <img 
+                      src="/images/Poh Yamone.jpg" 
+                      alt="Poh Yamone – Junior Software Developer & Data Analyst" 
+                      className="w-full h-full object-cover object-center scale-125"
+                    />
+                  </div>
+                </div>
+                {/* Founder Info */}
+                <div className="md:w-2/3">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <h3 className="text-2xl font-bold">Poh Yamone – Junior Software Developer & Data Analyst</h3>
+                    <a 
+                      href="https://www.linkedin.com/in/poh-yamone-062945219/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#0077B5] hover:text-[#005885] transition-colors"
+                      aria-label="Connect with Poh on LinkedIn"
+                    >
+                      <FaLinkedin size={28} />
+                    </a>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    Poh is a junior software developer and data analyst currently completing a Bachelor of Computer Science at the University of Wollongong, with a focus on software engineering and data analysis. She has gained hands-on experience through internships and research projects, applying her skills in programming, data analysis, and immersive technology. Her expertise includes:
+                  </p>
+                  <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                    <li><span className="font-semibold">Programming & Web Development</span> – Proficient in Python, C++, Java, PHP, Swift, and front-end technologies such as React, HTML, and CSS</li>
+                    <li><span className="font-semibold">Data & Analytical Tools</span> – Skilled in SQL, version control with Git, and software debugging tools, with practical experience in system design and optimization</li>
+                    <li><span className="font-semibold">XR & Visualization</span> – Contributed to a research project focused on extended reality (XR), developing immersive 3D environments using spatial mapping and 360° imagery</li>
+                    <li><span className="font-semibold">Team Leadership & Communication</span> – Demonstrated leadership as a shift leader at Guzman y Gomez and as a mentor in e-learning platforms, with strong multilingual communication in English, Burmese, and intermediate Japanese</li>
+                    <li><span className="font-semibold">Academic Excellence</span> – Recognized with a Certificate of Distinction for her performance during a medical technology internship</li>
+                  </ul>
+                  <p className="text-gray-700">
+                    Poh brings technical curiosity, cross-cultural experience, and a collaborative spirit to Coralytica, supporting our mission to deliver forward-thinking, data-driven solutions.
                   </p>
                 </div>
               </div>
