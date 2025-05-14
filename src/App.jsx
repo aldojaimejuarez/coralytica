@@ -498,7 +498,7 @@ function HomePage() {
                   <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-accent shadow-lg">
                     <img 
                       src="/images/aldo-jaime-juarez.jpg" 
-                      alt="Aldo Jaime Juárez - Senior Data Engineer & Co-Founder" 
+                      alt="Aldo Jaime Juárez - Senior Data Engineer & Founder" 
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -507,7 +507,7 @@ function HomePage() {
                 {/* Founder Info */}
                 <div className="md:w-2/3">
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                    <h3 className="text-2xl font-bold">Aldo Jaime Juárez – Senior Data Engineer & Co-Founder</h3>
+                    <h3 className="text-2xl font-bold">Aldo Jaime Juárez – Senior Data Engineer & Founder</h3>
                     <a 
                       href="https://www.linkedin.com/in/aldo-jaime-ju%C3%A1rez-269997114/" 
                       target="_blank" 
