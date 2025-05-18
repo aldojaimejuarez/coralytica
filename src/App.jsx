@@ -198,46 +198,49 @@ function HomePage() {
               >
                 {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
               </button>
-              
-              {/* Mobile Menu - Positioned to the right */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ 
-                  opacity: isMenuOpen ? 1 : 0,
-                  x: isMenuOpen ? 0 : 20
-                }}
-                transition={{ duration: 0.3 }}
-                className={`absolute top-0 right-10 bg-primary p-4 rounded-lg shadow-lg z-50 ${isMenuOpen ? 'block' : 'hidden'}`}
-                style={{ minWidth: '150px' }}
-              >
-                <div className="space-y-4">
-                  <a 
-                    href="#services" 
-                    className="block hover:text-accent transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Services
-                  </a>
-                  <a 
-                    href="#about" 
-                    className="block hover:text-accent transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    About
-                  </a>
-                  <a 
-                    href="#contact" 
-                    className="block hover:text-accent transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Contact
-                  </a>
-                </div>
-              </motion.div>
             </div>
           </div>
         </div>
       </motion.nav>
+
+      {/* Mobile Menu */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ 
+          opacity: isMenuOpen ? 1 : 0,
+          x: isMenuOpen ? 0 : 20
+        }}
+        transition={{ duration: 0.3 }}
+        className={`fixed right-0 bg-primary p-4 rounded-lg shadow-lg z-50 ${isMenuOpen ? 'block' : 'hidden'}`}
+        style={{
+          minWidth: '150px',
+          top: scrolled ? '56px' : '56px', // Ajustar según la altura de las navbars
+        }}
+      >
+        <div className="space-y-4">
+          <a 
+            href="#services" 
+            className="block text-white hover:text-accent transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Services
+          </a>
+          <a 
+            href="#about" 
+            className="block text-white hover:text-accent transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About
+          </a>
+          <a 
+            href="#contact" 
+            className="block text-white hover:text-accent transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact
+          </a>
+        </div>
+      </motion.div>
 
       {/* Hero Section */}
       <header className="bg-primary text-white relative overflow-hidden">
@@ -282,42 +285,6 @@ function HomePage() {
                 >
                   {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                 </button>
-                
-                {/* Mobile Menu - Positioned to the right */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ 
-                    opacity: isMenuOpen ? 1 : 0,
-                    x: isMenuOpen ? 0 : 20
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className={`absolute top-0 right-10 bg-primary p-4 rounded-lg shadow-lg z-50 ${isMenuOpen ? 'block' : 'hidden'}`}
-                  style={{ minWidth: '150px' }}
-                >
-                  <div className="space-y-4">
-                    <a 
-                      href="#services" 
-                      className="block hover:text-accent transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Services
-                    </a>
-                    <a 
-                      href="#about" 
-                      className="block hover:text-accent transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      About
-                    </a>
-                    <a 
-                      href="#contact" 
-                      className="block hover:text-accent transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Contact
-                    </a>
-                  </div>
-                </motion.div>
               </div>
             </div>
           </nav>
