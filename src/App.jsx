@@ -536,7 +536,39 @@ function HomePage() {
             
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Founder Image */}
+                {/* Jorge Image */}
+                <div className="md:w-1/3 flex justify-center">
+                  <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                    <img 
+                      src="/images/jorge_urbina.png" 
+                      alt="Jorge Urbina - Senior Data Engineer" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                {/* Jorge Info */}
+                <div className="md:w-2/3">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <h3 className="text-2xl font-bold">Jorge Urbina – Senior Data Engineer</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    Jorge is a seasoned data engineer with over 15 years of experience leading data architecture, business intelligence, and system integration projects across sectors including retail, consulting, and airport infrastructure. He has held senior roles in companies such as MSC Industrial Supply Co. and NielsenIQ, delivering robust data pipelines, BI platforms, and enterprise-grade database systems. His expertise includes:
+                  </p>
+                  <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                    <li><span className="font-semibold">Data Engineering & ETL</span> – Design and implementation of scalable ETL workflows using Pentaho, Oracle Data Integrator (ODI), SSIS, and PL/SQL for high-volume data ingestion and transformation</li>
+                    <li><span className="font-semibold">Business Intelligence Solutions</span> – Development of dashboards and reporting systems using tools such as MicroStrategy, QlikView, and Oracle BI EE, aligned with business KPIs and user needs</li>
+                    <li><span className="font-semibold">Database Systems & Optimization</span> – Skilled in Oracle, SQL Server, and PostgreSQL, with experience in schema design, stored procedures, and data modeling for analytics-ready environments</li>
+                    <li><span className="font-semibold">Systems Implementation & Compliance</span> – Led mission-critical software rollouts at ASUR, coordinating with international vendors and ensuring compliance with standards such as Sarbanes-Oxley (SOX)</li>
+                    <li><span className="font-semibold">Leadership & Project Delivery</span> – Successfully managed cross-functional teams and end-to-end projects in both cloud and on-premise environments, delivering scalable solutions under Agile and traditional methodologies</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Eduardo Image */}
                 <div className="md:w-1/3 flex justify-center">
                   <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-accent shadow-lg">
                     <img 
@@ -547,7 +579,7 @@ function HomePage() {
                   </div>
                 </div>
                 
-                {/* Founder Info */}
+                {/* Eduardo Info */}
                 <div className="md:w-2/3">
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                     <h3 className="text-2xl font-bold">Eduardo Maya – Senior Data Visualization Specialist</h3>
@@ -579,7 +611,7 @@ function HomePage() {
 
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Founder Image */}
+                {/* Leonardo Image */}
                 <div className="md:w-1/3 flex justify-center">
                   <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-accent shadow-lg">
                     <img 
