@@ -214,7 +214,7 @@ function HomePage() {
         className={`fixed right-0 bg-primary p-4 rounded-lg shadow-lg z-50 ${isMenuOpen ? 'block' : 'hidden'}`}
         style={{
           minWidth: '150px',
-          top: scrolled ? '56px' : '56px', // Ajustar según la altura de las navbars
+          top: scrolled ? '32px' : '40px', // Ajustar según la altura de las navbars
         }}
       >
         <div className="space-y-4">
