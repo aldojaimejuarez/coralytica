@@ -508,7 +508,7 @@ function HomePage() {
                   transition={{ duration: 0.5 }}
                   className="text-4xl font-bold text-center text-primary mb-8"
                 >
-                  UNLOCK THE POWER OF YOUR BUSINESS DATA
+                  Unlock The Power Of Your Business Data
                 </motion.h2>
 
                 <div className="relative">
