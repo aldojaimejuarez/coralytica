@@ -26,11 +26,20 @@ import {
   FaUsers,
   FaLightbulb as FaLightbulbOn,
   FaTools,
-  FaGraduationCap
+  FaGraduationCap,
+  FaExpand,
+  FaCompress,
+  FaChevronLeft,
+  FaChevronRight
 } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
 import AnimatedTextCarousel from './components/AnimatedTextCarousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 console.log("Nuevo cambio")
 
@@ -48,6 +57,8 @@ function App() {
 function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -71,6 +82,10 @@ function HomePage() {
       top: 0,
       behavior: 'smooth'
     });
+  };
+
+  const handleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
   };
 
   const services = [
@@ -160,6 +175,75 @@ function HomePage() {
       icon: <FaLightbulbOn className="text-4xl text-accent" />,
       title: "Empowerment",
       description: "Data should be a powerful asset, not a burden. We equip our clients with the knowledge, tools, and confidence to make smarter, data-driven decisions."
+    }
+  ];
+
+  const dashboardData = [
+    {
+      image: "/images/Business Overview.png",
+      title: "Business Overview",
+      insightFocus: "A consolidated view of your key performance metrics: total sales, net profit, units sold, customer mix (new vs. recurring), and sales trends with return rates.",
+      benefits: [
+        "Monitor business health in real time from a single view",
+        "Quickly identify drops in performance and monthly fluctuations",
+        "Track customer loyalty and growth through repeat purchase behavior",
+        "Understand your top-selling products and locations instantly"
+      ]
+    },
+    {
+      image: "/images/Sales Analysis.png",
+      title: "Sales Analysis",
+      insightFocus: "Geographic and categorical breakdown of total sales, along with monthly growth trends and comparison across online vs. physical channels.",
+      benefits: [
+        "Detect top-performing locations and expand accordingly",
+        "Optimize product assortment based on category-level sales",
+        "Improve channel strategy by comparing online and physical performance",
+        "Forecast more accurately with clear sales trends month by month"
+      ]
+    },
+    {
+      image: "/images/Profitability Analysis.png",
+      title: "Profitability Analysis",
+      insightFocus: "Detailed view of profitability by product category, sales channel, and city, paired with monthly profit and margin evolution.",
+      benefits: [
+        "Know exactly where you're making money — and where you're not",
+        "Prioritize high-margin categories and channels",
+        "Detect declining profitability before it impacts your bottom line",
+        "Align business efforts with what truly drives financial results"
+      ]
+    },
+    {
+      image: "/images/Sellers Analysis.png",
+      title: "Sellers Analysis",
+      insightFocus: "Sales performance by seller, including volume sold and revenue generated, with team-level comparison and demographic breakdown.",
+      benefits: [
+        "Identify your most and least effective salespeople",
+        "Foster team motivation with visible performance metrics",
+        "Provide coaching or incentives based on clear KPIs",
+        "Allocate sales resources more strategically across locations"
+      ]
+    },
+    {
+      image: "/images/Client Analysis.png",
+      title: "Client Analysis",
+      insightFocus: "Breakdown of new and returning customers by channel and product category, including monthly acquisition and retention dynamics.",
+      benefits: [
+        "Improve marketing by knowing where your best customers come from",
+        "Detect which product categories attract new vs. recurring clients",
+        "Measure loyalty over time and increase repeat sales",
+        "Optimize acquisition channels (online vs. in-store) based on performance"
+      ]
+    },
+    {
+      image: "/images/Returns Analysis.png",
+      title: "Returns Analysis",
+      insightFocus: "Visualization of return rates over time, by channel and by city, helping to pinpoint where returns are affecting profitability.",
+      benefits: [
+        "Identify cities or channels with unusually high return rates",
+        "Reduce product returns and their cost impact",
+        "Improve product quality, logistics or customer experience where needed",
+        "Protect profit margins by acting early on rising return trends"
+      ]
     }
   ];
 
@@ -409,6 +493,132 @@ function HomePage() {
             >
               Demo created using Microsoft's Contoso sample dataset for educational and demonstration purposes only. Data is fictional.
             </motion.p>
+
+            {/* Dashboard Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-8"
+            >
+              <div className="max-w-4xl mx-auto">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-4xl font-bold text-center text-primary mb-8"
+                >
+                  UNLOCK THE POWER OF YOUR BUSINESS DATA
+                </motion.h2>
+
+                <div className="relative">
+                  <div className="hidden md:flex items-center gap-12">
+                    <button 
+                      className="swiper-button-prev !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                    >
+                      <FaChevronLeft className="text-white text-lg" />
+                    </button>
+
+                    <Swiper
+                      modules={[Navigation, Pagination]}
+                      spaceBetween={30}
+                      slidesPerView={1}
+                      navigation={{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                      }}
+                      pagination={{ clickable: true }}
+                      onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+                      className="flex-1"
+                    >
+                      {dashboardData.map((dashboard, index) => (
+                        <SwiperSlide key={index}>
+                          <div>
+                            <img 
+                              src={dashboard.image} 
+                              alt={dashboard.title} 
+                              className="w-full h-auto rounded-2xl shadow-2xl"
+                            />
+                            
+                            {/* Dashboard Description */}
+                            <div className="mt-6 bg-white p-6 rounded-2xl shadow-lg">
+                              <h3 className="text-2xl font-bold text-primary mb-4">{dashboard.title}</h3>
+                              
+                              <div className="mb-6">
+                                <h4 className="text-lg font-semibold text-gray-800 mb-2">Insight Focus:</h4>
+                                <p className="text-gray-700">
+                                  {dashboard.insightFocus}
+                                </p>
+                              </div>
+
+                              <div>
+                                <h4 className="text-lg font-semibold text-gray-800 mb-2">How this helps your business:</h4>
+                                <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                                  {dashboard.benefits.map((benefit, idx) => (
+                                    <li key={idx}>{benefit}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+
+                    <button 
+                      className="swiper-button-next !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                    >
+                      <FaChevronRight className="text-white text-lg" />
+                    </button>
+                  </div>
+
+                  {/* Versión móvil sin botones */}
+                  <div className="md:hidden">
+                    <Swiper
+                      modules={[Pagination]}
+                      spaceBetween={30}
+                      slidesPerView={1}
+                      pagination={{ clickable: true }}
+                      onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+                      className="flex-1"
+                    >
+                      {dashboardData.map((dashboard, index) => (
+                        <SwiperSlide key={index}>
+                          <div>
+                            <img 
+                              src={dashboard.image} 
+                              alt={dashboard.title} 
+                              className="w-full h-auto rounded-2xl shadow-2xl"
+                            />
+                            
+                            {/* Dashboard Description */}
+                            <div className="mt-6 bg-white p-6 rounded-2xl shadow-lg">
+                              <h3 className="text-2xl font-bold text-primary mb-4">{dashboard.title}</h3>
+                              
+                              <div className="mb-6">
+                                <h4 className="text-lg font-semibold text-gray-800 mb-2">Insight Focus:</h4>
+                                <p className="text-gray-700">
+                                  {dashboard.insightFocus}
+                                </p>
+                              </div>
+
+                              <div>
+                                <h4 className="text-lg font-semibold text-gray-800 mb-2">How this helps your business:</h4>
+                                <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                                  {dashboard.benefits.map((benefit, idx) => (
+                                    <li key={idx}>{benefit}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
