@@ -301,23 +301,41 @@ Best regards,
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link 
-                to="/#services" 
+                to="/" 
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className="block px-3 py-2 text-white hover:text-accent hover:bg-white/5 rounded-md"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
-                to="/#about" 
+                to="/" 
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className="block px-3 py-2 text-white hover:text-accent hover:bg-white/5 rounded-md"
-                onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
-                to="/#contact" 
+                to="/" 
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className="block px-3 py-2 text-white hover:text-accent hover:bg-white/5 rounded-md"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
