@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { FaArrowLeft, FaPhone, FaEnvelope, FaLinkedin, FaYoutube, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaArrowLeft, FaWhatsapp, FaEnvelope, FaLinkedin, FaYoutube, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 // Import the services data
 import { services } from '../data/services';
@@ -145,10 +145,10 @@ function ServiceDetail() {
             <p className="mb-6">Contact us today to discuss how our {service.title} services can help your business.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="tel:+61491053327"
+                href="https://wa.me/61491053200"
                 className="bg-white text-accent hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition-colors flex items-center justify-center gap-2"
               >
-                <FaPhone /> Call Us
+                <FaWhatsapp /> WhatsApp Us
               </a>
               <a 
                 href="mailto:info@coralytica.com.au?subject=Inquiry about Data Services"
