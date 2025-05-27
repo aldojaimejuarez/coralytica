@@ -240,9 +240,42 @@ Best regards,
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              <Link to="/#services" className="text-white hover:text-accent transition-colors">Services</Link>
-              <Link to="/#about" className="text-white hover:text-accent transition-colors">About</Link>
-              <Link to="/#contact" className="text-white hover:text-accent transition-colors">Contact</Link>
+              <Link 
+                to="/" 
+                onClick={() => {
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }} 
+                className="text-white hover:text-accent transition-colors"
+              >
+                Services
+              </Link>
+              <Link 
+                to="/" 
+                onClick={() => {
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }} 
+                className="text-white hover:text-accent transition-colors"
+              >
+                About
+              </Link>
+              <Link 
+                to="/" 
+                onClick={() => {
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }} 
+                className="text-white hover:text-accent transition-colors"
+              >
+                Contact
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}

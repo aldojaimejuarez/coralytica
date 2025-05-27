@@ -433,10 +433,8 @@ function HomePage() {
                 </motion.span>
               </motion.h1>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Coralytica is a data analytics and data engineering consultancy based in NSW, Australia. We help businesses harness their data through cloud and on-premise solutions, BI dashboards, ETL pipelines, and data strategy for companies.
-              </p>
-              <p className="text-xl mb-8 max-w-2xl mx-auto">
-              We provide on-site consulting in NSW and remote services across Australia, making expert data solutions accessible nationwide.
+              Coralytica is a data engineering and analytics consultancy based in New South Wales, Australia.
+We offer data solutions that help companies harness their business information to make smarter decisions and improve efficiency.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" className="bg-accent hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
@@ -1078,7 +1076,7 @@ function HomePage() {
 
       {/* Floating Button */}
       <Link
-        to="/needs"
+        to="/needs#top"
         className="fixed bottom-8 right-8 bg-accent hover:bg-accent/90 text-white font-bold py-4 px-6 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105 z-50"
       >
         <FaComments className="text-xl" />
