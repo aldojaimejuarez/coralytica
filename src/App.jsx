@@ -31,11 +31,13 @@ import {
   FaCompress,
   FaChevronLeft,
   FaChevronRight,
-  FaWhatsapp
+  FaWhatsapp,
+  FaComments
 } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
 import AnimatedTextCarousel from './components/AnimatedTextCarousel';
+import NeedsPage from './components/NeedsPage';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -50,6 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services/:serviceId" element={<ServiceDetail />} />
+        <Route path="/needs" element={<NeedsPage />} />
       </Routes>
     </Router>
   );
@@ -1072,6 +1075,15 @@ function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Button */}
+      <Link
+        to="/needs"
+        className="fixed bottom-8 right-8 bg-accent hover:bg-accent/90 text-white font-bold py-4 px-6 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105 z-50"
+      >
+        <FaComments className="text-xl" />
+        <span>Tell Us Your Data Needs</span>
+      </Link>
     </div>
   );
 }
