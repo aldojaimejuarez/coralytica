@@ -30,7 +30,8 @@ import {
   FaExpand,
   FaCompress,
   FaChevronLeft,
-  FaChevronRight
+  FaChevronRight,
+  FaWhatsapp
 } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
@@ -1010,14 +1011,8 @@ function HomePage() {
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <FaPhone className="mr-4 text-accent" />
-                    <a href="tel:+61491053327" className="hover:text-accent transition-colors">
-                      +61 0491 053 327
-                    </a>
-                  </div>
-                  <div className="flex items-center">
-                    <FaPhone className="mr-4 text-accent" />
-                    <a href="tel:+61491053200" className="hover:text-accent transition-colors">
+                    <FaWhatsapp className="mr-4 text-accent" />
+                    <a href="https://wa.me/61491053200" className="hover:text-accent transition-colors">
                       +61 0491 053 200
                     </a>
                   </div>
