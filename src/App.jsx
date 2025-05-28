@@ -32,7 +32,7 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaWhatsapp,
-  FaComments
+  FaClipboardList
 } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
@@ -1075,13 +1075,25 @@ We offer data solutions that help companies harness their business information t
       </footer>
 
       {/* Floating Button */}
-      <Link
-        to="/needs#top"
-        className="fixed bottom-8 right-8 bg-accent hover:bg-accent/90 text-white font-bold py-4 px-6 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105 z-50"
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="fixed bottom-8 right-8 z-50"
       >
-        <FaComments className="text-xl" />
-        <span>Tell Us Your Data Needs</span>
-      </Link>
+        <Link
+          to="/needs"
+          onClick={() => {
+            navigate('/needs');
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 100);
+          }}
+          className="bg-accent text-white px-6 py-3 rounded-full shadow-lg hover:bg-accent/90 transition-colors flex items-center space-x-2"
+        >
+          <span>Tell Us Your Data Needs</span>
+          <FaClipboardList />
+        </Link>
+      </motion.div>
     </div>
   );
 }
