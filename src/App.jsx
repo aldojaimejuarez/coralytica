@@ -339,6 +339,7 @@ function HomePage() {
             muted
             loop
             playsInline
+            preload="auto"
             className="w-full h-full object-cover opacity-20"
             style={{ filter: 'brightness(0.8)' }}
           >
@@ -689,6 +690,7 @@ function HomePage() {
                 muted
                 loop
                 playsInline
+                preload="auto"
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: '16/9' }}
               >
