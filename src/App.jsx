@@ -435,28 +435,14 @@ function HomePage() {
               <p className="text-xl mb-8 max-w-2xl mx-auto">
                 Coralytica builds CUSTOM DATA APPLICATIONS that AUTOMATE the organization, reconciliation, and analysis of your business data. This allows you to make FASTER and SMARTER business decisions that IMPROVE sales, OPTIMIZE inventory, REDUCE operational costs, and SAVE time.
                 <div className="mt-8 text-center">
-                  <motion.span 
-                    className="inline-block text-2xl font-bold bg-gradient-to-r from-blue-100 to-blue-200 bg-clip-text text-transparent px-6 py-2 rounded-full shadow-[0_0_15px_rgba(191,219,254,0.5)] cursor-pointer hover:from-blue-200 hover:to-blue-100 transition-all duration-300 relative group"
-                    whileHover={{ scale: 1.05 }}
+                  <span 
+                    className="inline-block text-2xl font-bold bg-gradient-to-r from-blue-100 to-blue-200 bg-clip-text text-transparent px-6 py-2 rounded-full shadow-[0_0_15px_rgba(191,219,254,0.5)] cursor-pointer hover:from-blue-200 hover:to-blue-100 transition-all duration-300"
                     onClick={() => {
-                      // Aquí irá la navegación cuando se cree la sección
-                      console.log('Navegando a la sección de ejemplo');
                       document.getElementById('before-after-section').scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
                     Click Here To See An Example
-                    <motion.span 
-                      className="absolute inset-0 bg-gradient-to-r from-blue-100/0 via-blue-100/70 to-blue-100/0 rounded-full"
-                      animate={{
-                        x: ['-100%', '100%'],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                    />
-                  </motion.span>
+                  </span>
                 </div>
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
