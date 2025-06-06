@@ -722,6 +722,11 @@ function HomePage() {
                   Unlock The Power Of Your Business Data
                 </motion.h2>
 
+                <div className="flex items-center justify-center gap-2 mb-8">
+                  <FaExchangeAlt className="text-accent animate-pulse" />
+                  <p className="text-gray-600 text-lg">Swipe to see the complete dashboard</p>
+                </div>
+
                 <div className="relative">
                   <div className="hidden md:flex items-center gap-12">
                     <button 
