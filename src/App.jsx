@@ -482,7 +482,7 @@ function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-4xl font-bold text-center text-primary mb-12"
             >
-              Imagine this scenarios:
+              Two scenarios:
             </motion.h2>
 
             {/* Example Image Carousel */}
@@ -495,87 +495,177 @@ function HomePage() {
               <h3 className="text-3xl font-bold text-primary text-center mb-8">
                 Without Coralytica Data Applications
               </h3>
-              <div className="relative max-w-[3600px] mx-auto">
-                <div className="hidden md:flex items-center gap-12">
-                  <button 
-                    className="swiper-button-prev !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
-                  >
-                    <FaChevronLeft className="text-white text-lg" />
-                  </button>
+              <div id="carousel-without" className="hidden md:flex items-center gap-12">
+                <button 
+                  className="swiper-button-prev !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                >
+                  <FaChevronLeft className="text-white text-lg" />
+                </button>
 
-                  <Swiper
-                    modules={[Navigation, Pagination]}
-                    spaceBetween={30}
-                    slidesPerView={1}
-                    navigation={{
-                      nextEl: '.swiper-button-next',
-                      prevEl: '.swiper-button-prev',
-                    }}
-                    pagination={{ clickable: true }}
-                    className="flex-1"
-                  >
-                    <SwiperSlide>
-                      <img 
-                        src="/images/example_without/1.jpg" 
-                        alt="Example Without Coralytica 1" 
-                        className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img 
-                        src="/images/example_without/2.jpg" 
-                        alt="Example Without Coralytica 2" 
-                        className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img 
-                        src="/images/example_without/3.jpg" 
-                        alt="Example Without Coralytica 3" 
-                        className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
-                      />
-                    </SwiperSlide>
-                  </Swiper>
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  spaceBetween={30}
+                  slidesPerView={1}
+                  navigation={{
+                    nextEl: '#carousel-without .swiper-button-next',
+                    prevEl: '#carousel-without .swiper-button-prev',
+                  }}
+                  pagination={{ clickable: true }}
+                  className="flex-1"
+                >
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_without/1.jpg" 
+                      alt="Example Without Coralytica 1" 
+                      className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_without/2.jpg" 
+                      alt="Example Without Coralytica 2" 
+                      className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_without/3.jpg" 
+                      alt="Example Without Coralytica 3" 
+                      className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                    />
+                  </SwiperSlide>
+                </Swiper>
 
-                  <button 
-                    className="swiper-button-next !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
-                  >
-                    <FaChevronRight className="text-white text-lg" />
-                  </button>
-                </div>
+                <button 
+                  className="swiper-button-next !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                >
+                  <FaChevronRight className="text-white text-lg" />
+                </button>
+              </div>
 
-                {/* Versión móvil sin botones */}
-                <div className="md:hidden -mx-6">
-                  <Swiper
-                    modules={[Pagination]}
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    pagination={{ clickable: true }}
-                    className="flex-1"
-                  >
-                    <SwiperSlide>
-                      <img 
-                        src="/images/example_without/1.jpg" 
-                        alt="Example Without Coralytica 1" 
-                        className="w-screen h-auto object-contain"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img 
-                        src="/images/example_without/2.jpg" 
-                        alt="Example Without Coralytica 2" 
-                        className="w-screen h-auto object-contain"
-                      />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img 
-                        src="/images/example_without/3.jpg" 
-                        alt="Example Without Coralytica 3" 
-                        className="w-screen h-auto object-contain"
-                      />
-                    </SwiperSlide>
-                  </Swiper>
-                </div>
+              {/* Versión móvil sin botones */}
+              <div className="md:hidden -mx-6">
+                <Swiper
+                  modules={[Pagination]}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  pagination={{ clickable: true }}
+                  className="flex-1"
+                >
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_without/1.jpg" 
+                      alt="Example Without Coralytica 1" 
+                      className="w-screen h-auto object-contain"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_without/2.jpg" 
+                      alt="Example Without Coralytica 2" 
+                      className="w-screen h-auto object-contain"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_without/3.jpg" 
+                      alt="Example Without Coralytica 3" 
+                      className="w-screen h-auto object-contain"
+                    />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            </motion.div>
+
+            {/* With Coralytica Data Applications Carousel */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gray-50 rounded-2xl p-8 shadow-lg mb-12"
+            >
+              <h3 className="text-3xl font-bold text-primary text-center mb-8">
+                With Coralytica Data Applications
+              </h3>
+              <div id="carousel-with" className="hidden md:flex items-center gap-12">
+                <button 
+                  className="swiper-button-prev !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                >
+                  <FaChevronLeft className="text-white text-lg" />
+                </button>
+
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  spaceBetween={30}
+                  slidesPerView={1}
+                  navigation={{
+                    nextEl: '#carousel-with .swiper-button-next',
+                    prevEl: '#carousel-with .swiper-button-prev',
+                  }}
+                  pagination={{ clickable: true }}
+                  className="flex-1"
+                >
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_with/4.jpg" 
+                      alt="Example With Coralytic 1" 
+                      className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_with/5.jpg" 
+                      alt="Example With Coralytica 2" 
+                      className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_with/6.jpg" 
+                      alt="Example With Coralytica 3" 
+                      className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                    />
+                  </SwiperSlide>
+                </Swiper>
+
+                <button 
+                  className="swiper-button-next !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                >
+                  <FaChevronRight className="text-white text-lg" />
+                </button>
+              </div>
+
+              {/* Versión móvil sin botones */}
+              <div className="md:hidden -mx-6">
+                <Swiper
+                  modules={[Pagination]}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  pagination={{ clickable: true }}
+                  className="flex-1"
+                >
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_with/4.jpg" 
+                      alt="Example With Coralytica 1" 
+                      className="w-screen h-auto object-contain"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_with/5.jpg" 
+                      alt="Example With Coralytica 2" 
+                      className="w-screen h-auto object-contain"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img 
+                      src="/images/example_with/6.jpg" 
+                      alt="Example With Coralytica 3" 
+                      className="w-screen h-auto object-contain"
+                    />
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </motion.div>
           </div>
@@ -663,7 +753,6 @@ function HomePage() {
                         prevEl: '.swiper-button-prev',
                       }}
                       pagination={{ clickable: true }}
-                      onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
                       className="flex-1"
                     >
                       {dashboardData.map((dashboard, index) => (
@@ -797,7 +886,185 @@ function HomePage() {
         </div>
       </section>
 
-      {/* About  Section */}
+      {/* Consultancy Framework Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-4xl font-bold text-center text-primary mb-12"
+            >
+              Coralytica Consultancy Framework
+            </motion.h2>
+
+            <div className="space-y-6">
+              {/* Stage 1 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    1
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Discovery (Free Consultation)</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Explore the client's current challenges, systems, and data maturity to identify initial opportunities where Coralytica can add value.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Stage 2 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    2
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Requirements Collection</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Collect detailed business, technical, and data requirements to inform a tailored solution and define the project scope.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Stage 3 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    3
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Proposal of Scope of Work (SOW)</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Present a formal and aligned proposal including scope, deliverables, timeline, cost, and terms, to set mutual expectations.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Stage 4 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    4
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Contracting & Onboarding</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Formalise the engagement through contracts and initiate the project setup by aligning teams, tools, and communication.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Stage 5 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    5
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Engineering (Development, Quality & Testing)</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Design, build, and test the data solution ensuring technical excellence, reliability, and alignment with business needs.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Stage 6 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    6
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Delivery (Production)</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Deploy the final solution into the client's production environment and ensure it is ready to support business operations.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Stage 7 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    7
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Feedback</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Evaluate the success of the engagement, collect structured feedback, and identify new areas of opportunity.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Stage 8 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    8
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-2">Maintenance & Continuous Support (Optional)</h3>
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Objective:</span> Provide ongoing technical support, improvements, and enhancements as the client's needs evolve over time.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
       <section id="about" className="bg-gray-100 py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
