@@ -433,8 +433,31 @@ function HomePage() {
                 </motion.span>
               </motion.h1>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Coralytica is a data engineering and analytics consultancy based in New South Wales, Australia.
-We offer data solutions that help companies harness their business information to make smarter decisions and improve efficiency.
+                Coralytica builds CUSTOM DATA APPLICATIONS that AUTOMATE the organization, reconciliation, and analysis of your business data. This allows you to make FASTER and SMARTER business decisions that IMPROVE sales, OPTIMIZE inventory, REDUCE operational costs, and SAVE time.
+                <div className="mt-8 text-center">
+                  <motion.span 
+                    className="inline-block text-2xl font-bold bg-gradient-to-r from-blue-100 to-blue-200 bg-clip-text text-transparent px-6 py-2 rounded-full shadow-[0_0_15px_rgba(191,219,254,0.5)] cursor-pointer hover:from-blue-200 hover:to-blue-100 transition-all duration-300 relative group"
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => {
+                      // Aquí irá la navegación cuando se cree la sección
+                      console.log('Navegando a la sección de ejemplo');
+                      document.getElementById('before-after-section').scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Click Here To See An Example
+                    <motion.span 
+                      className="absolute inset-0 bg-gradient-to-r from-blue-100/0 via-blue-100/70 to-blue-100/0 rounded-full"
+                      animate={{
+                        x: ['-100%', '100%'],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                    />
+                  </motion.span>
+                </div>
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" className="bg-accent hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
@@ -448,6 +471,116 @@ We offer data solutions that help companies harness their business information t
           </div>
         </div>
       </header>
+
+      {/* Before/After Coralytica Section */}
+      <section id="before-after-section" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-4xl font-bold text-center text-primary mb-12"
+            >
+              Imagine this scenarios:
+            </motion.h2>
+
+            {/* Example Image Carousel */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gray-50 rounded-2xl p-8 shadow-lg mb-12"
+            >
+              <h3 className="text-3xl font-bold text-primary text-center mb-8">
+                Without Coralytica Data Applications
+              </h3>
+              <div className="relative max-w-[3600px] mx-auto">
+                <div className="hidden md:flex items-center gap-12">
+                  <button 
+                    className="swiper-button-prev !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                  >
+                    <FaChevronLeft className="text-white text-lg" />
+                  </button>
+
+                  <Swiper
+                    modules={[Navigation, Pagination]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    navigation={{
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                    }}
+                    pagination={{ clickable: true }}
+                    className="flex-1"
+                  >
+                    <SwiperSlide>
+                      <img 
+                        src="/images/example_without/1.jpg" 
+                        alt="Example Without Coralytica 1" 
+                        className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img 
+                        src="/images/example_without/2.jpg" 
+                        alt="Example Without Coralytica 2" 
+                        className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img 
+                        src="/images/example_without/3.jpg" 
+                        alt="Example Without Coralytica 3" 
+                        className="w-full h-auto rounded-xl shadow-lg object-contain max-h-[2400px]"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+
+                  <button 
+                    className="swiper-button-next !static !w-10 !h-10 !bg-white/10 hover:!bg-white/20 !rounded-full !transition-colors !m-0 !flex !items-center !justify-center !border !border-white/20"
+                  >
+                    <FaChevronRight className="text-white text-lg" />
+                  </button>
+                </div>
+
+                {/* Versión móvil sin botones */}
+                <div className="md:hidden -mx-6">
+                  <Swiper
+                    modules={[Pagination]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
+                    className="flex-1"
+                  >
+                    <SwiperSlide>
+                      <img 
+                        src="/images/example_without/1.jpg" 
+                        alt="Example Without Coralytica 1" 
+                        className="w-screen h-auto object-contain"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img 
+                        src="/images/example_without/2.jpg" 
+                        alt="Example Without Coralytica 2" 
+                        className="w-screen h-auto object-contain"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img 
+                        src="/images/example_without/3.jpg" 
+                        alt="Example Without Coralytica 3" 
+                        className="w-screen h-auto object-contain"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Animated Text Carousel Section */}
       <section className="py-4 bg-gray-50">
