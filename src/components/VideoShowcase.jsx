@@ -15,6 +15,7 @@ const VideoShowcase = () => {
           muted
           loop
           playsInline
+          preload="auto"
           controls
         >
           <source src="/videos/analytics-demo.mp4" type="video/mp4" />
