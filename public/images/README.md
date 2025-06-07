@@ -1,5 +1,5 @@
 # Founder Images
-
+#test
 This directory will contain the profile images of the Coralytica founders:
 
 1. Aldo Jaime Juárez (Senior Data Engineer & Co-Founder)
