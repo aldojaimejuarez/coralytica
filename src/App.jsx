@@ -111,20 +111,32 @@ function HomePage() {
       });
     };
 
-    // Intentar reproducir inmediatamente
-    playVideos();
-
-    // Intentar reproducir después de que la página esté completamente cargada
-    window.addEventListener('load', playVideos);
-
-    // Intentar reproducir cuando el usuario interactúa con la página
-    document.addEventListener('touchstart', playVideos, { once: true });
-    document.addEventListener('click', playVideos, { once: true });
+    // Detectar si es iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    
+    if (isIOS) {
+      // Forzar la reproducción después de un pequeño retraso en iOS
+      setTimeout(playVideos, 100);
+      
+      // Intentar reproducir cuando el usuario interactúa con la página
+      document.addEventListener('touchstart', playVideos, { once: true });
+      document.addEventListener('click', playVideos, { once: true });
+      
+      // Intentar reproducir cuando el dispositivo cambia de orientación
+      window.addEventListener('orientationchange', playVideos);
+      
+      // Intentar reproducir cuando la página está completamente cargada
+      window.addEventListener('load', playVideos);
+    } else {
+      // Para otros dispositivos, reproducir inmediatamente
+      playVideos();
+    }
 
     return () => {
       window.removeEventListener('load', playVideos);
       document.removeEventListener('touchstart', playVideos);
       document.removeEventListener('click', playVideos);
+      window.removeEventListener('orientationchange', playVideos);
     };
   }, []);
 
@@ -391,6 +403,9 @@ function HomePage() {
             style={{ filter: 'brightness(0.8)' }}
             playsinline="true"
             webkit-playsinline="true"
+            x-webkit-airplay="allow"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
           >
             <source src="/videos/dashboard_video.mp4" type="video/mp4" />
             Tu navegador no soporta el elemento de video.
@@ -744,6 +759,9 @@ function HomePage() {
                 style={{ aspectRatio: '16/9' }}
                 playsinline="true"
                 webkit-playsinline="true"
+                x-webkit-airplay="allow"
+                x5-video-player-type="h5"
+                x5-video-player-fullscreen="true"
               >
                 <source src="/videos/dashboard_video.mp4" type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
