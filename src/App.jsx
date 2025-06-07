@@ -92,6 +92,42 @@ function HomePage() {
     };
   }, []);
 
+  // Efecto específico para manejar la reproducción automática en iOS
+  useEffect(() => {
+    const videos = document.querySelectorAll('video');
+    
+    const playVideos = () => {
+      videos.forEach(video => {
+        // Forzar reproducción
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            // Si falla la reproducción automática, intentar reproducir con interacción del usuario
+            video.muted = true;
+            video.play();
+          });
+        }
+      });
+    };
+
+    // Intentar reproducir inmediatamente
+    playVideos();
+
+    // Intentar reproducir después de que la página esté completamente cargada
+    window.addEventListener('load', playVideos);
+
+    // Intentar reproducir cuando el usuario interactúa con la página
+    document.addEventListener('touchstart', playVideos, { once: true });
+    document.addEventListener('click', playVideos, { once: true });
+
+    return () => {
+      window.removeEventListener('load', playVideos);
+      document.removeEventListener('touchstart', playVideos);
+      document.removeEventListener('click', playVideos);
+    };
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -353,6 +389,8 @@ function HomePage() {
             preload="auto"
             className="w-full h-full object-cover opacity-20"
             style={{ filter: 'brightness(0.8)' }}
+            playsinline="true"
+            webkit-playsinline="true"
           >
             <source src="/videos/dashboard_video.mp4" type="video/mp4" />
             Tu navegador no soporta el elemento de video.
@@ -704,6 +742,8 @@ function HomePage() {
                 preload="auto"
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: '16/9' }}
+                playsinline="true"
+                webkit-playsinline="true"
               >
                 <source src="/videos/dashboard_video.mp4" type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
