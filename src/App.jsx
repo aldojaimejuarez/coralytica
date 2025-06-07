@@ -98,14 +98,19 @@ function HomePage() {
     
     const playVideos = () => {
       videos.forEach(video => {
+        // Asegurar que el video esté muteado (requisito para autoplay en iOS)
+        video.muted = true;
+        
         // Forzar reproducción
         const playPromise = video.play();
         
         if (playPromise !== undefined) {
           playPromise.catch(error => {
-            // Si falla la reproducción automática, intentar reproducir con interacción del usuario
-            video.muted = true;
-            video.play();
+            console.log('Error al reproducir:', error);
+            // Si falla, intentar nuevamente
+            setTimeout(() => {
+              video.play();
+            }, 100);
           });
         }
       });
@@ -115,24 +120,30 @@ function HomePage() {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     
     if (isIOS) {
-      // Forzar la reproducción después de un pequeño retraso en iOS
-      setTimeout(playVideos, 100);
+      // Intentar reproducir inmediatamente
+      playVideos();
       
-      // Intentar reproducir cuando el usuario interactúa con la página
-      document.addEventListener('touchstart', playVideos, { once: true });
-      document.addEventListener('click', playVideos, { once: true });
+      // Intentar reproducir después de que el DOM esté listo
+      document.addEventListener('DOMContentLoaded', playVideos);
+      
+      // Intentar reproducir cuando la página esté completamente cargada
+      window.addEventListener('load', playVideos);
       
       // Intentar reproducir cuando el dispositivo cambia de orientación
-      window.addEventListener('orientationchange', playVideos);
+      window.addEventListener('orientationchange', () => {
+        setTimeout(playVideos, 100);
+      });
       
-      // Intentar reproducir cuando la página está completamente cargada
-      window.addEventListener('load', playVideos);
+      // Como respaldo, también intentar con interacción del usuario
+      document.addEventListener('touchstart', playVideos, { once: true });
+      document.addEventListener('click', playVideos, { once: true });
     } else {
       // Para otros dispositivos, reproducir inmediatamente
       playVideos();
     }
 
     return () => {
+      document.removeEventListener('DOMContentLoaded', playVideos);
       window.removeEventListener('load', playVideos);
       document.removeEventListener('touchstart', playVideos);
       document.removeEventListener('click', playVideos);
@@ -406,6 +417,7 @@ function HomePage() {
             x-webkit-airplay="allow"
             x5-video-player-type="h5"
             x5-video-player-fullscreen="true"
+            defaultMuted
           >
             <source src="/videos/dashboard_video.mp4" type="video/mp4" />
             Tu navegador no soporta el elemento de video.
@@ -762,6 +774,7 @@ function HomePage() {
                 x-webkit-airplay="allow"
                 x5-video-player-type="h5"
                 x5-video-player-fullscreen="true"
+                defaultMuted
               >
                 <source src="/videos/dashboard_video.mp4" type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
