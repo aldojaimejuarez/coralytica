@@ -535,6 +535,26 @@ function HomePage() {
         </div>
       </header>
 
+      {/* What Is Coralytica Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-background/80">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
+              What Is Coralytica? - How We Transform Data Into Business Value
+            </h2>
+            <div className="relative w-full pt-[56.25%] mb-8">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                src="https://www.youtube.com/embed/JSkroMmS10Q"
+                title="What Is Coralytica?"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Before/After Coralytica Section */}
       <section id="before-after-section" className="py-20 bg-white">
         <div className="container mx-auto px-6">
