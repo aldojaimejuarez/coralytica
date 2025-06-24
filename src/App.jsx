@@ -568,6 +568,11 @@ function HomePage() {
               Two scenarios:
             </motion.h2>
 
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <FaExchangeAlt className="text-accent animate-pulse" />
+              <p className="text-gray-600 text-lg">Swipe to see the complete scenarios</p>
+            </div>
+
             {/* Example Image Carousel */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
