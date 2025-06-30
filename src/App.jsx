@@ -347,6 +347,7 @@ function HomePage() {
               <a href="#services" className="hover:text-accent transition-colors">Services</a>
               <a href="#about" className="hover:text-accent transition-colors">About</a>
               <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+              <a href="/privacy-policy.html" className="hover:text-accent transition-colors">Privacy Policy</a>
             </div>
             {/* Mobile Menu Button */}
             <div className="md:hidden relative flex justify-end">
@@ -397,6 +398,13 @@ function HomePage() {
           >
             Contact
           </a>
+          <a 
+            href="/privacy-policy.html" 
+            className="block text-white hover:text-accent transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Privacy Policy
+          </a>
         </div>
       </motion.div>
 
@@ -441,6 +449,7 @@ function HomePage() {
                 <a href="#services" className="hover:text-accent transition-colors">Services</a>
                 <a href="#about" className="hover:text-accent transition-colors">About</a>
                 <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+                <a href="/privacy-policy.html" className="hover:text-accent transition-colors">Privacy Policy</a>
               </div>
               {/* Mobile Menu Button */}
               <div className="md:hidden relative flex justify-end">
