@@ -992,7 +992,14 @@ function HomePage() {
                 </div>
                 <div className="mt-auto">
                   <button 
-                    onClick={() => service.id === 'ai-automation' ? window.location.href = '/reef.html' : navigate(`/services/${service.id}`)}
+                    onClick={() => {
+                      if (service.id === 'ai-automation') {
+                        navigate('/reef');
+                        window.scrollTo({ top: 0, behavior: 'auto' });
+                      } else {
+                        navigate(`/services/${service.id}`);
+                      }
+                    }}
                     className="w-full bg-accent hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center gap-2"
                   >
                     {service.id === 'ai-automation' ? 'Meet Reef Analytics Agent' : 'More information'} <FaArrowRight size={14} />
