@@ -6,7 +6,8 @@ import {
   FaCloud,
   FaPuzzlePiece,
   FaTools,
-  FaGraduationCap
+  FaGraduationCap,
+  FaLightbulb
 } from 'react-icons/fa';
 
 export const services = [
@@ -637,6 +638,33 @@ export const services = [
 
       <h3>Why Choose Coralytica?</h3>
       <p>We combine technical expertise with practical business experience to deliver training that makes a real difference to your organization.</p>
+    `
+  },
+  {
+    id: "ai-automation",
+    icon: <FaLightbulb className="text-4xl text-white" />,
+    title: "AI & Automation",
+    description: "Unlock the power of AI-driven analytics and business process automation. Let your team focus on what matters while intelligent agents like Reef deliver instant insights and automate repetitive tasks.",
+    benefit: "Experience next-level efficiency and decision-making with AI-powered tools tailored for your business.",
+    fullDescription: `
+      <h2>AI & Automation – Meet Reef Analytics Agent</h2>
+      <p>Reef Analytics Agent is Coralytica's AI-powered assistant that brings instant, conversational analytics and automation to your business. Ask questions in natural language, get actionable insights, and automate repetitive reporting or analysis tasks—all via WhatsApp or your preferred channel.</p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Conversational Analytics</strong> – Get answers, charts, and explanations instantly by asking questions in plain English.</li>
+        <li><strong>Business Process Automation</strong> – Automate routine data tasks, reporting, and notifications.</li>
+        <li><strong>Integration with Your Data</strong> – Connects to your spreadsheets, databases, or cloud systems securely.</li>
+        <li><strong>No Technical Skills Required</strong> – Designed for business users, not just IT teams.</li>
+        <li><strong>Customizable & Scalable</strong> – Tailored to your business needs and ready to grow with you.</li>
+      </ul>
+      <h3>Why Choose AI & Automation?</h3>
+      <ul>
+        <li>Save time and reduce manual work</li>
+        <li>Empower your team with instant, data-driven answers</li>
+        <li>Improve accuracy and consistency in reporting</li>
+        <li>Focus on strategic decisions, not repetitive tasks</li>
+      </ul>
+      <p>Discover how Reef Analytics Agent can transform your business—request a free demo today!</p>
     `
   }
 ];
