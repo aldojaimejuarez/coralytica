@@ -452,34 +452,18 @@
     </h1>
     <div class="hero-subtitle">Your On-Demand Data Analyst, Powered By AI</div>
     <div style="max-width:500px;margin:0 auto 2rem auto;position:relative;">
-      <video 
+      <iframe 
         id="reefVideo"
-        src="https://coralytica.com.au/videos/reef_video.mp4" 
-        autoplay 
-        muted 
-        playsinline 
-        controls 
-        style="width:100%;border-radius:1rem;background:#000; border:none; box-shadow:none;"
+        width="100%"
+        height="220"
+        src="https://www.youtube.com/embed/FphhpDrweVI"
+        title="Reef Analytics Demo Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        style="width:100%;border-radius:1rem;background:#000; border:none; box-shadow:none; min-height:220px; max-width:100%;"
         aria-label="Reef Analytics Demo Video"
-      >
-        Your browser does not support the video tag.
-      </video>
-      <div id="unmuteBtnContainer" style="text-align:center;margin-top:1.2rem;">
-        <button id="unmuteBtn" onclick="
-          var v = document.getElementById('reefVideo');
-          v.muted = false;
-          v.volume = 1;
-          v.play();
-          this.style.display='none';
-        "
-          style="
-            background:rgba(2,18,62,0.92);color:#fff;border:none;border-radius:2rem;padding:0.9rem 2.2rem;font-size:1.1rem;font-weight:700;box-shadow:0 2px 8px 0 rgba(44,116,179,0.13);cursor:pointer;transition:background 0.2s;
-            display:block;margin:0 auto;
-          "
-        >
-          🔊 Activate Audio
-        </button>
-      </div>
+      ></iframe>
     </div>
   </header>
 
@@ -645,16 +629,6 @@
   <a href="mailto:info@coralytica.com.au?subject=Free%20Consultation%20Request%20-%20Reef%20Analytics%20Agent&body=I%20would%20like%20to%20request%20a%20free%20demo%20of%20Reef%20Analytics%20Agent.%20Please%20contact%20me%20with%20more%20information." class="reef-float-btn">Try Reef Free</a>
 
   <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      var v = document.getElementById('reefVideo');
-      var b = document.getElementById('unmuteBtn');
-      var c = document.getElementById('unmuteBtnContainer');
-      if (!v.muted) { c.style.display = 'none'; }
-      v.addEventListener('volumechange', function() {
-        if (!v.muted) { c.style.display = 'none'; }
-      });
-    });
-
     function togglePackageInfo(id) {
       var el = document.getElementById(id);
       if (!el.classList.contains('open')) {
