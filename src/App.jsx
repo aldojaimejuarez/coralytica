@@ -34,7 +34,7 @@ import {
   FaWhatsapp,
   FaClipboardList
 } from 'react-icons/fa';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import ServiceDetail from './components/ServiceDetail';
 import AnimatedTextCarousel from './components/AnimatedTextCarousel';
 import NeedsPage from './components/NeedsPage';
@@ -67,6 +67,7 @@ function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,6 +94,19 @@ function HomePage() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash);
+        if (el) {
+          const yOffset = -220; // Ajusta este valor si es necesario
+          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   // Efecto específico para manejar la reproducción automática en iOS
   useEffect(() => {

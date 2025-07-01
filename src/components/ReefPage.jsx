@@ -428,9 +428,9 @@ function ReefPage() {
             &#9776;
           </button>
           <div className={`navbar-links${menuOpen ? ' show' : ''}`} id="navbar-links">
-            <a href="#services" onClick={handleLinkClick}>Services</a>
-            <a href="#about" onClick={handleLinkClick}>About</a>
-            <a href="#contact" onClick={handleLinkClick}>Contact</a>
+            <a href="/#services" onClick={handleLinkClick}>Services</a>
+            <a href="/#about" onClick={handleLinkClick}>About</a>
+            <a href="/#contact" onClick={handleLinkClick}>Contact</a>
             <a href="/privacy-policy.html" onClick={handleLinkClick}>Privacy Policy</a>
           </div>
         </div>
