@@ -218,6 +218,13 @@ function HomePage() {
       title: "Training and Capacitation in Data Analysis and Engineering",
       description: "Empower your team with practical knowledge and skills in data analysis and engineering through customized training programs.",
       benefit: "Build internal expertise and data-driven culture while reducing dependency on external consultants."
+    },
+    {
+      id: "ai-automation",
+      icon: <FaLightbulb className="text-4xl mb-4 text-accent" />,
+      title: "AI & Automation",
+      description: "Unlock the power of AI-driven analytics and business process automation. Let your team focus on what matters while intelligent agents like Reef deliver instant insights and automate repetitive tasks.",
+      benefit: "Experience next-level efficiency and decision-making with AI-powered tools tailored for your business."
     }
   ];
 
@@ -519,7 +526,7 @@ function HomePage() {
                 </motion.span>
               </motion.h1>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
-                Coralytica builds CUSTOM DATA APPLICATIONS that AUTOMATE the organization, reconciliation, and analysis of your business data. This allows you to make FASTER and SMARTER business decisions that IMPROVE sales, OPTIMIZE inventory, REDUCE operational costs, and SAVE time.
+              Coralytica builds CUSTOM DATA APPLICATIONS powered by AI to AUTOMATE the organisation, reconciliation, and analysis of your business data. This enables you to make FASTER and SMARTER decisions that IMPROVE sales, OPTIMISE inventory, REDUCE operational costs, and SAVE time.
                 <div className="mt-8 text-center">
                   <span 
                     className="inline-block text-2xl font-bold bg-gradient-to-r from-blue-100 to-blue-200 bg-clip-text text-transparent px-6 py-2 rounded-full shadow-[0_0_15px_rgba(191,219,254,0.5)] cursor-pointer hover:from-blue-200 hover:to-blue-100 transition-all duration-300"
@@ -983,10 +990,10 @@ function HomePage() {
                 </div>
                 <div className="mt-auto">
                   <button 
-                    onClick={() => navigate(`/services/${service.id}`)}
+                    onClick={() => service.id === 'ai-automation' ? window.location.href = '/reef.html' : navigate(`/services/${service.id}`)}
                     className="w-full bg-accent hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center gap-2"
                   >
-                    More information <FaArrowRight size={14} />
+                    {service.id === 'ai-automation' ? 'Meet Reef Analytics Agent' : 'More information'} <FaArrowRight size={14} />
                   </button>
                 </div>
               </motion.div>

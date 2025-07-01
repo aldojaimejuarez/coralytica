@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+public/videos/reef_video.mp4
+public/videos/dashboard_video.mp4

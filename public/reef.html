@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reef Analytics Agent | Coralytica</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root {
+      --primary: #0A2647;
+      --secondary: #144272;
+      --accent: #2C74B3;
+      --white: #fff;
+      --gray-bg: #f8fafc;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: var(--white);
+      color: var(--primary);
+    }
+    .hero {
+      background: #01123e;
+      color: var(--white);
+      padding: 4rem 1rem 3rem 1rem;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: #e0e7ef;
+    }
+    .section {
+      max-width: 800px;
+      margin: 2.5rem auto;
+      background: var(--gray-bg);
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 16px 0 rgba(44,116,179,0.07);
+      padding: 2.5rem 1.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .section-text {
+      font-size: 1.15rem;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .problems-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 1.5rem auto;
+      max-width: 600px;
+    }
+    .problems-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+      font-size: 1.08rem;
+      color: var(--primary);
+    }
+    .problems-list li::before {
+      content: '✔';
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+    .footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .footer-brand {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .footer-socials {
+      margin: 1rem 0 0.5rem 0;
+    }
+    .footer-socials a {
+      color: var(--accent);
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-socials a:hover {
+      color: var(--white);
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2rem; }
+      .section { padding: 1.2rem 0.5rem; }
+      .section-title { font-size: 1.3rem; }
+    }
+    #reef-navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #01123e;
+      color: #fff;
+      z-index: 1000;
+      box-shadow: 0 2px 8px 0 rgba(44,116,179,0.07);
+    }
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 1.5rem;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      cursor: pointer;
+      color: #fff;
+      transition: color 0.2s;
+    }
+    .navbar-brand:hover {
+      color: #2C74B3;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      padding: 0.3rem 0.7rem;
+      border-radius: 1rem;
+    }
+    .navbar-links a:hover {
+      color: #2C74B3;
+      background: rgba(44,116,179,0.08);
+    }
+    .navbar-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    @media (max-width: 800px) {
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #01123e;
+        width: 100vw;
+        box-shadow: 0 2px 8px 0 rgba(44,116,179,0.07);
+        padding: 1rem 0;
+        z-index: 1001;
+      }
+      .navbar-links.show {
+        display: flex;
+      }
+      .navbar-toggle {
+        display: block;
+      }
+    }
+    body { padding-top: 60px; }
+    @media (max-width: 600px) { body { padding-top: 54px; } }
+    .reef-footer {
+      background: #01123e;
+      color: #fff;
+      padding: 2rem 1rem 1rem 1rem;
+      margin-top: 3rem;
+    }
+    .reef-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (min-width: 700px) {
+      .reef-footer-container {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    .reef-footer-branding {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+    .reef-footer-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+    .reef-footer-copy {
+      font-size: 1rem;
+      color: #e0e7ef;
+    }
+    .reef-footer-socials {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .reef-footer-social-link {
+      color: #2C74B3;
+      font-size: 1.7rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .reef-footer-social-link:hover {
+      color: #fff;
+    }
+    .reef-packages-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 700px) {
+      .reef-packages-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 1100px) {
+      .reef-packages-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    .reef-package-card {
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 16px 0 rgba(44,116,179,0.07);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      border: 1.5px solid #e5e7eb;
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+    .reef-package-card:hover {
+      box-shadow: 0 6px 32px 0 rgba(44,116,179,0.13);
+      border-color: #2C74B3;
+    }
+    .reef-package-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0.7rem;
+    }
+    .reef-package-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      color: #2C74B3;
+    }
+    .reef-package-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0A2647;
+      margin-bottom: 0.2rem;
+    }
+    .reef-package-price {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #2C74B3;
+      margin-bottom: 0.5rem;
+    }
+    .reef-package-summary {
+      font-size: 1rem;
+      color: #144272;
+      margin-bottom: 1.1rem;
+      min-height: 44px;
+    }
+    .reef-package-more-btn {
+      background: #2C74B3;
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      transition: background 0.2s;
+    }
+    .reef-package-more-btn:hover {
+      background: #0A2647;
+    }
+    .reef-package-info {
+      font-size: 0.98rem;
+      color: #222;
+      background: #f8fafc;
+      border-radius: 0.8rem;
+      margin-top: 0.5rem;
+      padding: 1.1rem 1rem 1rem 1rem;
+      box-shadow: 0 1px 6px 0 rgba(44,116,179,0.07);
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+    }
+    .reef-package-info.open {
+      max-height: 2000px;
+      opacity: 1;
+      transition: max-height 0.7s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+    }
+    .reef-package-info ul { margin: 0 0 0 1.1rem; padding: 0; }
+    .reef-package-info li { margin-bottom: 0.7rem; }
+    .reef-package-info a { color: #2C74B3; text-decoration: underline; }
+    @media (max-width: 700px) {
+      .reef-package-card { padding: 1.1rem 0.5rem 1rem 0.5rem; }
+      .reef-package-title { font-size: 1.08rem; }
+      .reef-package-price { font-size: 1rem; }
+      .reef-package-summary { font-size: 0.98rem; min-height: 36px; }
+      .reef-package-info { font-size: 0.97rem; padding: 0.7rem 0.5rem 0.7rem 0.5rem; }
+      .reef-package-icon { font-size: 1.5rem; }
+      .reef-package-more-btn { font-size: 0.98rem; padding: 0.6rem 1.1rem; }
+    }
+    .reef-float-btn {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: #2C74B3;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 1.1rem 2.2rem;
+      border-radius: 2.5rem;
+      box-shadow: 0 4px 24px 0 rgba(44,116,179,0.18);
+      border: none;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .reef-float-btn:hover {
+      background: #144272;
+      color: #fff;
+      box-shadow: 0 6px 32px 0 rgba(44,116,179,0.28);
+    }
+    .reef-demo-section {
+      background: #eaf2fb;
+      border-left: 8px solid #2C74B3;
+      margin: 3rem auto 2.5rem auto;
+      max-width: 800px;
+      border-radius: 1.1rem;
+      box-shadow: 0 2px 16px 0 rgba(44,116,179,0.07);
+      padding: 2.2rem 2rem 2.2rem 2.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .reef-demo-content {
+      width: 100%;
+    }
+    .reef-demo-title {
+      color: #2C74B3;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+    .reef-demo-text {
+      font-size: 1.18rem;
+      color: #144272;
+      line-height: 1.7;
+    }
+    .reef-demo-highlight {
+      display: block;
+      margin-top: 1.2rem;
+      font-weight: 700;
+      color: #0A2647;
+      font-size: 1.13rem;
+    }
+    @media (max-width: 600px) {
+      .reef-demo-section {
+        padding: 1.2rem 0.7rem 1.2rem 1.1rem;
+        border-radius: 0.7rem;
+      }
+      .reef-demo-title { font-size: 1.05rem; }
+      .reef-demo-text { font-size: 1rem; }
+      .reef-demo-highlight { font-size: 1rem; }
+    }
+    .reef-animated-title {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    .reef-anim-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: reefTitleFadeIn 0.7s cubic-bezier(.4,2,.6,1) forwards;
+    }
+    @keyframes reefTitleFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <link rel="preload" as="image" href="/images/Business%20Overview.png">
+</head>
+<body>
+  <nav id="reef-navbar">
+    <div class="navbar-container">
+      <span class="navbar-brand" onclick="window.location.href='/'">Coralytica</span>
+      <button class="navbar-toggle" aria-label="Open menu" onclick="document.getElementById('navbar-links').classList.toggle('show')">&#9776;</button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </nav>
+  <header class="hero">
+    <h1 class="hero-title reef-animated-title">
+      <span class="reef-anim-word" style="animation-delay:0.1s">Reef</span>
+      <span class="reef-anim-word" style="animation-delay:0.3s">Analytics</span>
+      <span class="reef-anim-word" style="animation-delay:0.5s">Agent</span>
+    </h1>
+    <div class="hero-subtitle">Your On-Demand Data Analyst, Powered By AI</div>
+    <div style="max-width:500px;margin:0 auto 2rem auto;position:relative;">
+      <video 
+        id="reefVideo"
+        src="/videos/reef_video.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        controls 
+        style="width:100%;border-radius:1rem;background:#000; border:none; box-shadow:none;"
+        aria-label="Reef Analytics Demo Video"
+      >
+        Your browser does not support the video tag.
+      </video>
+      <div id="unmuteBtnContainer" style="text-align:center;margin-top:1.2rem;">
+        <button id="unmuteBtn" onclick="
+          var v = document.getElementById('reefVideo');
+          v.muted = false;
+          v.volume = 1;
+          v.play();
+          this.style.display='none';
+        "
+          style="
+            background:rgba(2,18,62,0.92);color:#fff;border:none;border-radius:2rem;padding:0.9rem 2.2rem;font-size:1.1rem;font-weight:700;box-shadow:0 2px 8px 0 rgba(44,116,179,0.13);cursor:pointer;transition:background 0.2s;
+            display:block;margin:0 auto;
+          "
+        >
+          🔊 Activate Audio
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2 class="section-title">What is Reef Analytics Agent?</h2>
+      <div class="section-text">
+        Reef is an AI analytics assistant that delivers clear business insights via WhatsApp.<br>
+        It makes data accessible, instant and easy for everyone in your business.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">How does Reef work?</h2>
+      <div class="section-text">
+        You ask a question (written or spoken) on WhatsApp.<br>
+        Reef uses AI to analyse your data and sends back a chart and explanation, in seconds.
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:2rem;">
+        <iframe 
+          width="320" 
+          height="568" 
+          src="https://www.youtube.com/embed/cmu8nbUSLtU" 
+          title="How does Reef work?" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+          style="border-radius:1rem;box-shadow:0 2px 16px 0 rgba(44,116,179,0.13);background:#000;max-width:100%;"
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">What problem does it solve?</h2>
+      <ul class="problems-list">
+        <li>Slow and complex access to insights: Getting answers often requires technical skills or waiting for reports.</li>
+        <li>Low adoption of traditional BI tools: Dashboards are underused because they're too complex or disconnected from daily workflows.</li>
+        <li>Lack of timely, data-informed decisions: Delays in understanding what's happening lead to missed opportunities or poor outcomes.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Why is it useful for businesses?</h2>
+      <div class="section-text">
+        Reef makes data accessible to everyone in the business instantly and without complexity.<br>
+        It removes the need for technical skills or tools, allowing decision-makers to get clear, AI-generated insights anytime via WhatsApp.<br>
+        It's a fast, practical way to stay informed and act with confidence.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">What makes Reef different and better than a dashboard?</h2>
+      <div class="section-text">
+        Reef isn't a replacement for dashboards, it's a smart complement.<br>
+        Powered by AI, Reef acts like a virtual analyst, letting you ask complex business questions through WhatsApp and get instant, visual and written answers.<br>
+        When you need deeper, strategic reporting, Coralytica also designs custom dashboards to support long-term decision-making.
+      </div>
+    </section>
+
+    <section class="reef-demo-section">
+      <div class="reef-demo-content">
+        <h3 class="reef-demo-title">Want to see Reef in action before committing?</h3>
+        <div class="reef-demo-text">
+          We can offer you a <b>FREE DEMO</b> using:<br><br>
+          1. A sample database we created for demonstration purposes, or<br>
+          2. A small data sample you share with us (as long as it's safe and non-sensitive).<br><br>
+          <span class="reef-demo-highlight">This way, you can experience how Reef works and what kind of insights you could get, no setup or cost required.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="reef-packages" style="padding: 3rem 0; background: #f8fafc;">
+      <div style="max-width:1200px;margin:0 auto;padding:0 1rem;">
+        <h2 style="font-size:2.2rem;font-weight:800;text-align:center;margin-bottom:2.5rem;color:#0A2647;">Reef Analytics Agent Packages</h2>
+        <div class="reef-packages-grid">
+          <!-- Starter Package -->
+          <div class="reef-package-card">
+            <div class="reef-package-header">
+              <span class="reef-package-icon">🔌</span>
+              <h3 class="reef-package-title">Starter Package – Reef Plug & Play</h3>
+              <div class="reef-package-price">From $699 AUD</div>
+            </div>
+            <div class="reef-package-summary">Ideal for businesses that want to ask questions to their data without modifying its current structure. Simple setup, no technical knowledge required.</div>
+            <button class="reef-package-more-btn" onclick="togglePackageInfo('starter-info')">More info</button>
+            <div class="reef-package-info" id="starter-info">
+              <ul>
+                <li><b>Full Implementation of Reef's Automated AI System on a Dedicated VPS</b><br>We set up Reef on a secure, private virtual server owned by your business, ensuring full control of your data and access. This includes the installation, configuration, and optimisation of all the components needed for Reef to run smoothly.<br>Cost covered: VPS from Hostinger for 1 year.<br>But this is not just a technical setup — it's the creation of a smart, automated assistant that connects your data to artificial intelligence and delivers answers instantly via WhatsApp.<br><br><b>How the automated system works:</b><ul><li>You ask a question by voice or text on WhatsApp (e.g. "What were our top 5 selling products last month?")</li><li>Reef interprets your request using AI</li><li>Reef connects directly to your data source</li><li>It runs the analysis and creates a visual chart and summary</li><li>The result is sent back to your WhatsApp chat within seconds</li></ul>This automation works 24/7, giving you fast, on-demand access to insights — anytime you need them.</li>
+                <li><b>Direct Ingestion from One Data Source (As-Is)</b><br>Reef reads your data exactly as it is, without cleaning or transforming it. Examples: Excel spreadsheets, POS system exports, e-commerce reports (like Shopify), MySQL or PostgreSQL tables.</li>
+                <li><b>WhatsApp Business Configuration</b><br>We connect a WhatsApp Business number to Reef through the Meta Cloud API, enabling you to ask questions and receive insights directly in your chat. This includes full Meta API setup for secure integration.<br>Costs covered: Vodafone SIM card, Vodafone recharge for 1 year, Meta API.</li>
+                <li><b>OpenAI API Setup</b><br>We create and configure an OpenAI account (owned by you) with starting credits. This powers Reef's natural language understanding to interpret your questions and generate meaningful answers.<br>Cost covered: Initial credits via OpenAI platform.</li>
+                <li><b>Configuration of 10 Preloaded Business Questions</b><br>We pre-configure 10 useful questions tailored to your data so you can start using Reef right away. You can also ask your own custom questions at any time by voice or text. Reef will interpret them using AI.<br><b>Examples:</b><ul><li>What were our top 5 selling products last month?</li><li>How many units were sold this week in Wollongong?</li><li>What was our total revenue in Q2 2025?</li><li>Which store had the lowest number of transactions last week?</li><li>What products currently have the most stock?</li></ul><b>Note:</b> In the Starter Package, Reef uses your data exactly as it is. This means the answers depend on how your data is currently structured. We don't perform any calculations, summaries or grouping at this stage.</li>
+                <li><b>Digital Best Practices Guide</b><br>A short, easy-to-follow PDF that shows how to get the most out of Reef. Includes tips for phrasing questions, understanding results, and maintaining good data habits – no technical background needed.</li>
+                <li><b>30 Days of Basic Support</b><br>Includes assistance with small adjustments, troubleshooting, and guidance via email or WhatsApp during business hours. Does not include: new features, extra data sources, or changes to data structure or Reef logic. If your business requires more advanced capabilities such as data cleaning, custom metrics, or multiple sources, we'll help you upgrade to the package that fits your needs.</li>
+                <li><b>Estimated Implementation Time:</b> 5 to 7 business days from the moment we receive access to your VPS, WhatsApp account, and data source.</li>
+                <li><b>Important Note:</b> This package does not include data cleaning, transformation, aggregation, or automated pipelines. Reef will respond based on the current structure and quality of your data. If you need help preparing your data like cleaning it, calculating metrics, or building structured views, we offer other packages that include those services.</li>
+                <li><b>Privacy and Data Handling:</b> We take your data privacy seriously. All demo and production setups follow strict data handling practices. <a href="/privacy-policy.html" target="_blank">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Growth Package -->
+          <div class="reef-package-card">
+            <div class="reef-package-header">
+              <span class="reef-package-icon">📈</span>
+              <h3 class="reef-package-title">Growth Package – Reef + Clean Data</h3>
+              <div class="reef-package-price">From $1,299 AUD</div>
+            </div>
+            <div class="reef-package-summary">Ideal for businesses that want to improve data quality and gain more reliable, analytical answers from their existing systems.</div>
+            <button class="reef-package-more-btn" onclick="togglePackageInfo('growth-info')">More info</button>
+            <div class="reef-package-info" id="growth-info">
+              <ul>
+                <li><b>Everything from the Starter Package</b><br>You receive all the components included in the Reef Plug & Play package:<ul><li>Full implementation on a private VPS</li><li>WhatsApp integration</li><li>OpenAI setup</li><li>One data source connected as-is</li><li>10 preloaded business questions</li><li>Best practices guide</li><li>30 days of basic support</li></ul></li>
+                <li><b>Data Cleaning, Standardisation & Transformation</b><br>We review your source data and apply essential cleaning steps such as correcting inconsistencies, normalising values, removing duplicates, and standardising formats to improve reliability and accuracy.</li>
+                <li><b>Development of One Automated ETL Pipeline</b><br>We design and build a basic automated ETL (Extract, Transform, Load) pipeline to ingest your data, clean it, and load it into a format Reef can use consistently — with zero manual work required.</li>
+                <li><b>Groupings, Calculations & Structured Data Preparation</b><br>We organise your data with grouped views (e.g. by month, store, category), calculated fields (e.g. revenue, margin), and logical structures so Reef can deliver more complex, meaningful answers.</li>
+                <li><b>Integration of Up to 3 Data Sources</b><br>We connect up to three different data sources to Reef. These may include Excel files, SQL databases, e-commerce exports, cloud apps (like Shopify), or POS systems.</li>
+                <li><b>60 Days of Extended Support</b><br>Priority support via email or WhatsApp during business hours. Includes troubleshooting, help adjusting logic, or refining data flows.</li>
+                <li><b>Estimated Implementation Time:</b> 10 to 15 business days from the moment we receive all required access and data.</li>
+                <li><b>Important Note:</b> This package includes data preparation but not dashboards or reporting tools. If your business needs visual analytics and KPIs, the Business Intelligence Package is the best fit.</li>
+                <li><b>Privacy and Data Handling:</b> We follow strict practices for confidentiality and data protection. <a href="/privacy-policy.html" target="_blank">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Advanced Intelligence Package -->
+          <div class="reef-package-card">
+            <div class="reef-package-header">
+              <span class="reef-package-icon">🚀</span>
+              <h3 class="reef-package-title">Advanced Intelligence Package – Reef + Dashboards + Cloud Enablement</h3>
+              <div class="reef-package-price">From $4,500 AUD (depending on scope)</div>
+            </div>
+            <div class="reef-package-summary">Ideal for businesses that want to take full control of their data: from clean and automated pipelines to smart dashboards, cloud architecture, and strategic guidance.</div>
+            <button class="reef-package-more-btn" onclick="togglePackageInfo('advanced-info')">More info</button>
+            <div class="reef-package-info" id="advanced-info">
+              <ul>
+                <li><b>Everything from the Growth Package</b><br>You get the full setup from our previous tier:<ul><li>Data cleaning, transformation and standardisation</li><li>One automated ETL pipeline</li><li>Integration of up to 3 data sources</li><li>Grouped views, calculated metrics, structured datasets</li><li>60 days of extended support</li></ul></li>
+                <li><b>Design & Implementation of 2 Custom Dashboards</b><br>We build two interactive dashboards tailored to your KPIs and business goals, using Power BI, Looker Studio, or similar tools. Visual insights, filters, comparisons, and exportable reports included.</li>
+                <li><b>Dashboard Training Session (Up to 1 Hour)</b><br>A virtual session with your team to show how to use, filter, interpret, and extract value from the dashboards.</li>
+                <li><b>Technical & Functional Documentation</b><br>You'll receive clear documentation of your dashboards, data logic, ETL flows, and how-to guides for your team.</li>
+                <li><b>Automated Reports or Alerts</b><br>We set up automatic report delivery via email or alerts for key business triggers, like drops in revenue or stock issues.</li>
+                <li><b>Cloud Migration & Support</b><br>We help migrate your existing processes or data warehouse to cloud platforms (GCP, AWS, or Azure) and provide technical support for setup, troubleshooting, or scaling.</li>
+                <li><b>Internal Team Training (Optional)</b><br>Custom sessions for your team — analysts, decision-makers or developers — to ensure they understand the tools, data structures and insights.</li>
+                <li><b>Data Architecture Review & Optimisation</b><br>We analyse your current data pipelines and architecture and provide recommendations to improve performance, reliability and scalability.</li>
+                <li><b>Monthly Strategic Advisory Sessions (3 Months)</b><br>We meet monthly (online) to help you review results, adjust strategy, and plan improvements to your analytics systems and data stack.</li>
+                <li><b>Estimated Implementation Time:</b> Varies depending on the complexity of your project, including: number and type of data sources, dashboard customisation, cloud migration needs, and team availability.</li>
+                <li><b>Privacy & Data Handling:</b> We apply enterprise-grade standards for data access, infrastructure, and governance. <a href="/privacy-policy.html" target="_blank">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reef-footer">
+    <div class="reef-footer-container">
+      <div class="reef-footer-branding">
+        <span class="reef-footer-title">Coralytica</span>
+        <span class="reef-footer-copy">© 2025 Coralytica. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante Try Reef Free -->
+  <a href="mailto:info@coralytica.com.au?subject=Free%20Consultation%20Request%20-%20Reef%20Analytics%20Agent&body=I%20would%20like%20to%20request%20a%20free%20demo%20of%20Reef%20Analytics%20Agent.%20Please%20contact%20me%20with%20more%20information." class="reef-float-btn">Try Reef Free</a>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var v = document.getElementById('reefVideo');
+      var b = document.getElementById('unmuteBtn');
+      var c = document.getElementById('unmuteBtnContainer');
+      if (!v.muted) { c.style.display = 'none'; }
+      v.addEventListener('volumechange', function() {
+        if (!v.muted) { c.style.display = 'none'; }
+      });
+    });
+
+    function togglePackageInfo(id) {
+      var el = document.getElementById(id);
+      if (!el.classList.contains('open')) {
+        el.classList.add('open');
+      } else {
+        el.classList.remove('open');
+      }
+    }
+  </script>
+</body>
+</html> 
