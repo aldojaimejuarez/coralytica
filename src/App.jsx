@@ -38,6 +38,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import ServiceDetail from './components/ServiceDetail';
 import AnimatedTextCarousel from './components/AnimatedTextCarousel';
 import NeedsPage from './components/NeedsPage';
+import ReefPage from './components/ReefPage';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -53,6 +54,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/services/:serviceId" element={<ServiceDetail />} />
         <Route path="/needs" element={<NeedsPage />} />
+        <Route path="/reef" element={<ReefPage />} />
       </Routes>
     </Router>
   );
