@@ -189,8 +189,8 @@
     body { padding-top: 60px; }
     @media (max-width: 600px) { body { padding-top: 54px; } }
     .reef-footer {
-      background: #01123e;
-      color: #fff;
+      background: var(--primary);
+      color: var(--white);
       padding: 2rem 1rem 1rem 1rem;
       margin-top: 3rem;
     }
@@ -351,17 +351,18 @@
       right: 2.2rem;
       bottom: 2.2rem;
       z-index: 9999;
-      background: #2C74B3;
+      background: #001440;
       color: #fff;
       font-size: 1.15rem;
       font-weight: 700;
-      padding: 1.1rem 2.2rem;
+      padding: 0.7rem 2rem;
       border-radius: 2.5rem;
       box-shadow: 0 4px 24px 0 rgba(44,116,179,0.18);
       border: none;
       text-decoration: none;
       transition: background 0.2s, box-shadow 0.2s, color 0.2s;
       display: inline-block;
+      animation: reefPulse 1.8s infinite cubic-bezier(.4,2,.6,1);
     }
     .reef-float-btn:hover {
       background: #144272;
@@ -427,6 +428,11 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+    @keyframes reefPulse {
+      0% { transform: scale(1); box-shadow: 0 4px 24px 0 rgba(44,116,179,0.18); }
+      50% { transform: scale(1.07); box-shadow: 0 8px 32px 0 rgba(44,116,179,0.28); }
+      100% { transform: scale(1); box-shadow: 0 4px 24px 0 rgba(44,116,179,0.18); }
     }
   </style>
   <link rel="preload" as="image" href="/images/Business%20Overview.png">
@@ -626,7 +632,10 @@
   </footer>
 
   <!-- Botón flotante Try Reef Free -->
-  <a href="mailto:info@coralytica.com.au?subject=Free%20Consultation%20Request%20-%20Reef%20Analytics%20Agent&body=I%20would%20like%20to%20request%20a%20free%20demo%20of%20Reef%20Analytics%20Agent.%20Please%20contact%20me%20with%20more%20information." class="reef-float-btn">Try Reef Free</a>
+  <a href="mailto:info@coralytica.com.au?subject=Free%20Consultation%20Request%20-%20Reef%20Analytics%20Agent&body=I%20would%20like%20to%20request%20a%20free%20demo%20of%20Reef%20Analytics%20Agent.%20Please%20contact%20me%20with%20more%20information." class="reef-float-btn" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem; background:#001440; border-radius:2.5rem; box-shadow:0 4px 24px 0 rgba(44,116,179,0.18); padding:1.2rem 2rem 1rem 2rem; border:none; color:#fff; font-weight:700; font-size:1.15rem; text-decoration:none;">
+      <img src="/images/reef.png" alt="Try Reef Free" style="height:60px; width:auto; border-radius:1.5rem; background:#fff; display:block;"/>
+      <span style="white-space:nowrap; margin-top:0.3rem;">Try Reef Free</span>
+    </a>
 
   <script>
     function togglePackageInfo(id) {
