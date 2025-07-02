@@ -583,6 +583,35 @@ function HomePage() {
                 allowFullScreen
               ></iframe>
             </div>
+            {/* Nueva sección: Meet Reef Analytics Agent */}
+            <motion.section
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gray-50 rounded-2xl p-8 shadow-lg mb-12"
+              style={{marginTop: '3.5rem'}}
+            >
+              <style>{`
+                .reef-cta-btn {
+                  transition: transform 0.18s cubic-bezier(.4,2,.6,1), background 0.2s;
+                }
+                .reef-cta-btn:hover {
+                  transform: scale(1.07);
+                  background: #2C74B3 !important;
+                }
+              `}</style>
+              <div className="max-w-2xl mx-auto text-center px-4">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Meet Reef Analytics Agent</h2>
+                <p className="text-lg md:text-xl text-gray-700 mb-6">
+                  Reef Analytics Agent is an AI-powered Data Analyst that delivers instant insights from your business data.<br /><br />
+                  Reef acts as a smart, on-demand assistant that interprets your business questions and responds with clear, actionable insights in seconds. It's a fast, practical way to stay informed and make confident decisions every day.
+                </p>
+                <a href="/reef" className="reef-cta-btn inline-flex items-center gap-3 bg-primary hover:bg-accent text-white font-bold py-3 px-6 rounded-full shadow-lg transition-colors text-lg" style={{marginTop:'0.5rem'}}>
+                  <img src="/images/reef.png" alt="Reef Avatar" style={{height:'48px',width:'auto',borderRadius:'1.5rem',background:'#fff',display:'block'}}/>
+                  <span>Discover Reef</span>
+                </a>
+              </div>
+            </motion.section>
           </div>
         </div>
       </section>
