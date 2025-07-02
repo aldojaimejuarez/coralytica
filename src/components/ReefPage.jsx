@@ -521,6 +521,7 @@ function ReefPage() {
               We can offer you a <b>FREE DEMO</b> using:<br /><br />
               1. A sample database we created for demonstration purposes, or<br />
               2. A small data sample you share with us (as long as it's safe and non-sensitive).<br /><br />
+              <a href="/privacy-policy.html" style={{color:'#2C74B3', fontWeight:600, fontSize:'1.08rem', textDecoration:'underline'}}>See our Privacy Policy</a><br /><br />
               <span className="reef-demo-highlight">This way, you can experience how Reef works and what kind of insights you could get, no setup or cost required.</span>
             </div>
           </div>
